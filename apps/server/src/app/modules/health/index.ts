@@ -1,0 +1,1 @@
+export { registerHealthController } from "./controller";

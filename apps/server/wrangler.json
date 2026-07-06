@@ -1,0 +1,54 @@
+{
+  "compatibility_date": "2026-06-05",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": { "enabled": true },
+  "env": {
+    "production": {
+      "name": "i7eo-shopify-app",
+      "main": "dist/isolate/cloudflare/index.js",
+      "r2_buckets": [
+        {
+          "binding": "i7eo_shopify_app_r2",
+          "bucket_name": "i7eo-shopify-app-r2"
+        }
+      ],
+      "d1_databases": [
+        {
+          "binding": "i7eo_shopify_app_d1",
+          "database_name": "i7eo-shopify-app-d1",
+          "database_id": "db55be50-271c-4a8b-8bc0-9e77e70bfe47",
+          "migrations_dir": "drizzle.d1"
+        }
+      ],
+      "queues": {
+        "producers": [
+          {
+            "binding": "i7eo_shopify_app_queue",
+            "queue": "i7eo-shopify-app-queue"
+          }
+        ],
+        "consumers": [
+          {
+            "dead_letter_queue": "i7eo-shopify-app-queue-dlq",
+            "max_batch_size": 1,
+            "max_retries": 3,
+            "queue": "i7eo-shopify-app-queue"
+          }
+        ]
+      },
+      "triggers": { "crons": ["0 * * * *"] }
+    }
+  },
+  "assets": {
+    "directory": "/Users/i7eo/Documents/Workspace/GitHub/shopify-hono-app/apps/web/dist",
+    "not_found_handling": "single-page-application",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/*",
+      "/auth",
+      "/auth/*",
+      "/webhooks",
+      "/webhooks/*"
+    ]
+  }
+}

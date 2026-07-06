@@ -1,0 +1,14 @@
+{
+  "references": [
+    { "path": "./tsconfig.node.json" },
+
+    { "path": "./apps/document" },
+    { "path": "./apps/server" },
+    { "path": "./apps/web" },
+
+    { "path": "./packages/app-env" },
+    { "path": "./packages/database" },
+    { "path": "./packages/envs" }
+  ],
+  "files": []
+}

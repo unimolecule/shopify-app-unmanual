@@ -1,0 +1,1 @@
+export { registerFileController } from "./controller";

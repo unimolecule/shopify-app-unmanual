@@ -1,0 +1,1 @@
+export { registerShopController } from "./controller";

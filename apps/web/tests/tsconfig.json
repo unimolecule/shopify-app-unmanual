@@ -1,0 +1,21 @@
+{
+  "extends": "../tsconfig.web.json",
+  "compilerOptions": {
+    "composite": false,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "rootDir": "..",
+    "types": ["node", "vitest"],
+    "allowJs": true,
+    "declaration": false,
+    "declarationMap": false,
+    "emitDeclarationOnly": false,
+    "noEmit": true
+  },
+  "include": [
+    "../vitest.config.ts",
+    "./**/*.ts",
+    "./**/*.tsx",
+    "../typings/**/*"
+  ],
+  "exclude": ["../dist/**/*", "../node_modules/**/*"]
+}

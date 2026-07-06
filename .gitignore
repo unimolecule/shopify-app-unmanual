@@ -1,0 +1,56 @@
+# Output
+out
+*.tgz
+dist/
+dist-ssr/
+**/*.tsbuildinfo
+
+# package manager
+node_modules/
+
+# Logs
+*.log
+logs
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
+
+# Cache
+.cache/
+.eslintcache
+.swc/
+.vercel/
+.wrangler/
+.shopify/
+.nitro/
+.tanstack/
+.output/
+.vinxi/
+.astro/
+
+# Testing
+coverage/
+*.lcov
+
+# Temp
+.temp
+.tmp
+
+# Local File
+*.env.*
+!*.env.example
+*.local.*
+!*.local.example
+
+# macOS
+# https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
+.DS_Store
+
+
+# IDEs
+.idea
+.project
+.classpath
+.c9
+*.launch
+.settings
+*.sublime-workspace

@@ -1,0 +1,26 @@
+{
+  "extends": ["@unconfig/ts-config/react.json"],
+  "compilerOptions": {
+    "composite": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "./internal/**/*",
+    "./src/**/*",
+    "./**/*.json",
+    "./**/typings/**/*"
+  ],
+  "exclude": [
+    "**/__tests__/**",
+    "**/tests/**",
+    "**/dist/**/*",
+    "**/node_modules/**/*",
+    "**/*.md"
+  ]
+}

@@ -1,0 +1,35 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "e0a12566417a6240b79bb463cac4b0de"
+application_url = "https://i7eo-shopify-app-dev.i7eo.com"
+embedded = true
+name = "Unmanual Dev"
+
+[build]
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2026-07"
+
+[[webhooks.subscriptions]]
+compliance_topics = ["customers/data_request"]
+uri = "/webhooks/privacy/customers-data-request"
+
+[[webhooks.subscriptions]]
+compliance_topics = ["customers/redact"]
+uri = "/webhooks/privacy/customers-redact"
+
+[[webhooks.subscriptions]]
+compliance_topics = ["shop/redact"]
+uri = "/webhooks/privacy/shop-redact"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,write_products,read_orders"
+
+[auth]
+redirect_urls = [
+  "https://i7eo-shopify-app-dev.i7eo.com/auth/callback",
+  "https://i7eo-shopify-app-dev.i7eo.com/auth/shopify/callback",
+  "https://i7eo-shopify-app-dev.i7eo.com/api/auth/callback"
+]

@@ -1,0 +1,176 @@
+packages:
+  - "apps/**"
+  - "packages/**"
+
+nodeVersion: "26.2.0"
+engineStrict: true
+
+linkWorkspacePackages: true
+saveWorkspaceProtocol: "rolling"
+savePrefix: ""
+
+overrides:
+  "@smithy/types": "^4.15.0"
+
+publicHoistPattern:
+  - "*eslint*"
+  - "*@eslint*"
+  - "*prettier*"
+  - "*lint-staged*"
+  - "*stylelint*"
+  - "*commitlint*"
+  - "*@commitlint*"
+  - "*cz*"
+  - "*simple-git-hooks*"
+  - "*changeset*"
+
+catalog:
+  "@types/node": "^26.1.0"
+  "npm-run-all2": "^9.0.2"
+  "rimraf": "^6.1.3"
+  "typescript": "^6.0.3"
+  "zod": "^4.4.3"
+  "dayjs": "^1.11.21"
+  "vite": "^8.1.3"
+  "@unimolecule/canon": "^0.1.3"
+  "@unimolecule/oh-my-fetch": "^0.1.6"
+  "@unimolecule/utils": "^0.1.4"
+
+catalogs:
+  "dx":
+    "eslint": "^10.6.0"
+    "@sxzz/eslint-config": "^8.2.1"
+    "@commitlint/cli": "^21.2.0"
+    "@commitlint/config-conventional": "^21.2.0"
+    "@commitlint/types": "^21.2.0"
+    "czg": "^1.13.1"
+    "lint-staged": "^17.0.8"
+    "prettier": "^3.9.4"
+    "prettier-plugin-tailwindcss": "^0.8.0"
+    "simple-git-hooks": "^2.13.1"
+    "@unconfig/stylelint-config": "^0.1.11"
+    "@unconfig/ts-config": "^0.1.11"
+    "@unconfig/changeset-workflow": "^0.0.2"
+    "tsdown": "^0.22.3"
+    "tsx": "^4.22.5"
+    "turbo": "^2.9.14"
+    "@manypkg/get-packages": "^3.1.0"
+  "react":
+    "react": "^19.2.7"
+    "react-dom": "^19.2.7"
+    "@types/react": "^19.2.17"
+    "@types/react-dom": "^19.2.3"
+    "immer": "^11.1.9"
+    "zustand": "^5.0.14"
+    "@vitejs/plugin-react": "^6.0.3"
+  "vue":
+    "vue": "^3.5.39"
+    "@vitejs/plugin-vue": "^6.0.7"
+    "@vitejs/plugin-vue-jsx": "^5.1.6"
+  "tailwindcss":
+    "tailwindcss": "^4.3.2"
+    "@tailwindcss/vite": "^4.3.2"
+  "hono":
+    "hono": "^4.12.27"
+  "drizzle":
+    "drizzle-orm": "^0.45.2"
+    "drizzle-zod": "^0.8.3"
+    "drizzle-kit": "^0.31.10"
+  "pg":
+    "pg": "^8.22.0"
+    "@types/pg": "^8.20.0"
+  "queue":
+    "pg-boss": "^12.25.0"
+  "redis":
+    "redis": "^6.1.0"
+  "shopify":
+    "@shopify/cli": "^4.3.0"
+  "test":
+    "vitest": "^4.1.8"
+    "@vitest/ui": "^4.1.8"
+    "@vitest/coverage-v8": "^4.1.8"
+    "@testing-library/react": "^16.3.2"
+    "jsdom": "^29.1.1"
+  "cloudflare":
+    "@cloudflare/workers-types": "^5.20260703.1"
+    "wrangler": "^4.107.0"
+
+minimumReleaseAgeExclude:
+  - hono@4.12.23
+  - "@babel/code-frame@7.29.7"
+  - "@babel/compat-data@7.29.7"
+  - "@babel/core@7.29.7"
+  - "@babel/generator@7.29.7"
+  - "@babel/helper-compilation-targets@7.29.7"
+  - "@babel/helper-globals@7.29.7"
+  - "@babel/helper-module-imports@7.29.7"
+  - "@babel/helper-module-transforms@7.29.7"
+  - "@babel/helper-string-parser@7.29.7"
+  - "@babel/helper-validator-identifier@7.29.7"
+  - "@babel/helper-validator-option@7.29.7"
+  - "@babel/helpers@7.29.7"
+  - "@babel/parser@7.29.7"
+  - "@babel/template@7.29.7"
+  - "@babel/traverse@7.29.7"
+  - "@babel/types@7.29.7"
+  - "@typescript-eslint/eslint-plugin@8.60.0"
+  - "@typescript-eslint/parser@8.60.0"
+  - "@typescript-eslint/project-service@8.60.0"
+  - "@typescript-eslint/scope-manager@8.60.0"
+  - "@typescript-eslint/tsconfig-utils@8.60.0"
+  - "@typescript-eslint/type-utils@8.60.0"
+  - "@typescript-eslint/types@8.60.0"
+  - "@typescript-eslint/typescript-estree@8.60.0"
+  - "@typescript-eslint/utils@8.60.0"
+  - "@typescript-eslint/visitor-keys@8.60.0"
+  - typescript-eslint@8.60.0
+  - es-toolkit@1.47.0
+  - "@cloudflare/workers-types@4.20260606.1"
+  - "@img/sharp-darwin-arm64@0.35.0"
+  - "@img/sharp-darwin-x64@0.35.0"
+  - "@img/sharp-freebsd-wasm32@0.35.0"
+  - "@img/sharp-libvips-darwin-arm64@1.3.0"
+  - "@img/sharp-libvips-darwin-x64@1.3.0"
+  - "@img/sharp-libvips-linux-arm64@1.3.0"
+  - "@img/sharp-libvips-linux-arm@1.3.0"
+  - "@img/sharp-libvips-linux-ppc64@1.3.0"
+  - "@img/sharp-libvips-linux-riscv64@1.3.0"
+  - "@img/sharp-libvips-linux-s390x@1.3.0"
+  - "@img/sharp-libvips-linux-x64@1.3.0"
+  - "@img/sharp-libvips-linuxmusl-arm64@1.3.0"
+  - "@img/sharp-libvips-linuxmusl-x64@1.3.0"
+  - "@img/sharp-linux-arm64@0.35.0"
+  - "@img/sharp-linux-arm@0.35.0"
+  - "@img/sharp-linux-ppc64@0.35.0"
+  - "@img/sharp-linux-riscv64@0.35.0"
+  - "@img/sharp-linux-s390x@0.35.0"
+  - "@img/sharp-linux-x64@0.35.0"
+  - "@img/sharp-linuxmusl-arm64@0.35.0"
+  - "@img/sharp-linuxmusl-x64@0.35.0"
+  - "@img/sharp-wasm32@0.35.0"
+  - "@img/sharp-webcontainers-wasm32@0.35.0"
+  - "@img/sharp-win32-arm64@0.35.0"
+  - "@img/sharp-win32-ia32@0.35.0"
+  - "@img/sharp-win32-x64@0.35.0"
+  - semver@7.8.4
+  - sharp@0.35.0
+  - "@aws-sdk/core@3.974.21"
+  - "@aws-sdk/s3-request-presigner@3.1069.0"
+  - "@aws-sdk/signature-v4-multi-region@3.996.35"
+  - "@aws-sdk/types@3.973.13"
+  - "@aws-sdk/xml-builder@3.972.30"
+  - "@shopify/cli@4.2.0"
+  - "@sxzz/eslint-config@8.2.1"
+  - miniflare@4.20260616.0
+  - wrangler@4.101.0
+  - "@unconfig/ts-config@0.1.11"
+  - "@unimolecule/canon@0.1.0 || 0.1.1 || 0.1.2 || 0.1.3"
+  - "@unimolecule/oh-my-fetch@0.1.0 || 0.1.1 || 0.1.2 || 0.1.4 || 0.1.6"
+  - "@unimolecule/utils@0.1.0 || 0.1.1 || 0.1.2 || 0.1.3 || 0.1.4"
+
+allowBuilds:
+  esbuild: true
+  msgpackr-extract: true
+  sharp: true
+  simple-git-hooks: true
+  workerd: true

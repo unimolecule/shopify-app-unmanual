@@ -1,0 +1,6 @@
+export const DEFAULT_APP_BUCKET_PROVIDERS = {
+  MEMORY: "memory",
+  R2: "r2",
+} as const;
+export type DEFAULT_APP_BUCKET_PROVIDERS_VALUES =
+  (typeof DEFAULT_APP_BUCKET_PROVIDERS)[keyof typeof DEFAULT_APP_BUCKET_PROVIDERS];

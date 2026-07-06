@@ -1,0 +1,6 @@
+export const DEFAULT_APP_DATABASE_PROVIDERS = {
+  POSTGRES: "postgres",
+  D1: "d1",
+} as const;
+export type DEFAULT_APP_DATABASE_PROVIDERS_VALUES =
+  (typeof DEFAULT_APP_DATABASE_PROVIDERS)[keyof typeof DEFAULT_APP_DATABASE_PROVIDERS];

@@ -1,0 +1,37 @@
+{
+  "name": "@shamt/document",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "author": "i7eo",
+  "license": "MIT",
+  "scripts": {
+    "tailwindcss:init": "bunx --bun tailwindcss init",
+    "dev": "bun --env-file=../../.env --env-file=../../.env.development run vitepress:dev",
+    "vitepress:dev": "bunx --bun vitepress dev",
+    "prebuild": "bun clean:cache",
+    "build": "bun --env-file=../../.env --env-file=../../.env.production run vitepress:build",
+    "vitepress:build": "bunx --bun vitepress build",
+    "preview": "bun --env-file=../../.env --env-file=../../.env.production run vitepress:preview",
+    "vitepress:preview": "bunx --bun vitepress serve",
+    "format": "prettier \"./**/*.{js,ts,jsx,tsx,vue,md,json,jsonc}\" --write",
+    "lint": "TIMING=1 eslint \"./**/*.{js,jsx,ts,tsx,vue,md,json,jsonc}\" --fix",
+    "clean": "run-p \"clean:**\"",
+    "clean:cache": "rimraf dist",
+    "clean:deps": "rimraf node_modules"
+  },
+  "dependencies": {
+    "dayjs": "catalog:",
+    "tailwindcss": "catalog:tailwindcss",
+    "vue": "catalog:vue"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "catalog:tailwindcss",
+    "@types/node": "catalog:",
+    "@vitejs/plugin-vue": "catalog:vue",
+    "@vitejs/plugin-vue-jsx": "catalog:vue",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitepress": "^1.6.4"
+  }
+}

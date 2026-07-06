@@ -1,0 +1,255 @@
+@import "tailwindcss" source("../../");
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  color-scheme: light;
+
+  --admin-bg: rgba(241, 241, 241, 1);
+  --admin-bg-inverse: rgba(26, 26, 26, 1);
+  --admin-surface: rgba(255, 255, 255, 1);
+  --admin-surface-hover: rgba(247, 247, 247, 1);
+  --admin-surface-active: rgba(243, 243, 243, 1);
+  --admin-surface-secondary: rgba(247, 247, 247, 1);
+  --admin-surface-tertiary: rgba(243, 243, 243, 1);
+
+  --admin-fill: rgba(255, 255, 255, 1);
+  --admin-fill-hover: rgba(250, 250, 250, 1);
+  --admin-fill-active: rgba(247, 247, 247, 1);
+  --admin-fill-secondary: rgba(241, 241, 241, 1);
+  --admin-fill-tertiary: rgba(227, 227, 227, 1);
+  --admin-fill-brand: rgba(48, 48, 48, 1);
+  --admin-fill-brand-hover: rgba(26, 26, 26, 1);
+  --admin-fill-critical: rgba(199, 10, 36, 1);
+  --admin-fill-success: rgba(4, 123, 93, 1);
+  --admin-fill-warning: rgba(255, 184, 0, 1);
+  --admin-fill-emphasis: rgba(0, 91, 211, 1);
+  --admin-fill-magic: rgba(128, 81, 255, 1);
+
+  --admin-text: rgba(48, 48, 48, 1);
+  --admin-text-secondary: rgba(97, 97, 97, 1);
+  --admin-text-disabled: rgba(181, 181, 181, 1);
+  --admin-text-link: rgba(0, 91, 211, 1);
+  --admin-text-on-brand: rgba(255, 255, 255, 1);
+  --admin-text-critical: rgba(142, 11, 33, 1);
+  --admin-text-critical-on-fill: rgba(255, 250, 251, 1);
+
+  --admin-border: rgba(227, 227, 227, 1);
+  --admin-border-hover: rgba(204, 204, 204, 1);
+  --admin-border-secondary: rgba(235, 235, 235, 1);
+  --admin-border-tertiary: rgba(204, 204, 204, 1);
+  --admin-border-focus: rgba(0, 91, 211, 1);
+  --admin-input-border: rgba(138, 138, 138, 1);
+
+  --admin-radius-none: 0rem;
+  --admin-radius-xs: 0.125rem;
+  --admin-radius-sm: 0.25rem;
+  --admin-radius-md: 0.5rem;
+  --admin-radius-lg: 0.75rem;
+  --admin-radius-xl: 1rem;
+  --admin-radius-2xl: 1.25rem;
+  --admin-radius-full: 624.9375rem;
+
+  --admin-font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI",
+    Roboto, "Helvetica Neue", sans-serif;
+  --admin-font-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+    monospace;
+
+  --admin-font-weight-regular: 450;
+  --admin-font-weight-medium: 550;
+  --admin-font-weight-semibold: 650;
+  --admin-font-weight-bold: 700;
+
+  --admin-space-base-unit: 0.25rem;
+  --admin-motion-duration-base: 150ms;
+  --admin-motion-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  --admin-shadow-xs: 0rem 0.0625rem 0rem 0rem rgba(26, 26, 26, 0.07);
+  --admin-shadow-sm: 0rem 0.1875rem 0.0625rem -0.0625rem rgba(26, 26, 26, 0.07);
+  --admin-shadow-md: 0rem 0.25rem 0.375rem -0.125rem rgba(26, 26, 26, 0.2);
+  --admin-shadow-lg: 0rem 0.5rem 1rem -0.25rem rgba(26, 26, 26, 0.22);
+  --admin-shadow-xl: 0rem 0.75rem 1.25rem -0.5rem rgba(26, 26, 26, 0.24);
+  --admin-shadow-2xl: 0rem 1.25rem 1.25rem -0.5rem rgba(26, 26, 26, 0.28);
+
+  --background: var(--admin-bg);
+  --foreground: var(--admin-text);
+  --card: var(--admin-surface);
+  --card-foreground: var(--admin-text);
+  --popover: var(--admin-surface);
+  --popover-foreground: var(--admin-text);
+  --primary: var(--admin-fill-brand);
+  --primary-foreground: var(--admin-text-on-brand);
+  --secondary: var(--admin-fill-secondary);
+  --secondary-foreground: var(--admin-text);
+  --muted: var(--admin-surface-secondary);
+  --muted-foreground: var(--admin-text-secondary);
+  --accent: var(--admin-fill-tertiary);
+  --accent-foreground: var(--admin-text);
+  --destructive: var(--admin-fill-critical);
+  --destructive-foreground: var(--admin-text-critical-on-fill);
+  --border: var(--admin-border);
+  --input: var(--admin-input-border);
+  --ring: var(--admin-border-focus);
+  --radius: var(--admin-radius-md);
+  --chart-1: var(--admin-fill-emphasis);
+  --chart-2: var(--admin-fill-success);
+  --chart-3: var(--admin-fill-warning);
+  --chart-4: var(--admin-fill-critical);
+  --chart-5: var(--admin-fill-magic);
+  --sidebar: var(--admin-surface-secondary);
+  --sidebar-foreground: var(--admin-text);
+  --sidebar-primary: var(--admin-fill-brand);
+  --sidebar-primary-foreground: var(--admin-text-on-brand);
+  --sidebar-accent: var(--admin-fill-tertiary);
+  --sidebar-accent-foreground: var(--admin-text);
+  --sidebar-border: var(--admin-border);
+  --sidebar-ring: var(--admin-border-focus);
+}
+
+.dark {
+  color-scheme: dark;
+
+  --admin-bg: rgba(26, 26, 26, 1);
+  --admin-bg-inverse: rgba(241, 241, 241, 1);
+  --admin-surface: rgba(48, 48, 48, 1);
+  --admin-surface-hover: rgba(74, 74, 74, 1);
+  --admin-surface-active: rgba(97, 97, 97, 1);
+  --admin-surface-secondary: rgba(255, 255, 255, 0.08);
+  --admin-surface-tertiary: rgba(255, 255, 255, 0.08);
+  --admin-fill: rgba(48, 48, 48, 1);
+  --admin-fill-hover: rgba(255, 255, 255, 0.05);
+  --admin-fill-active: rgba(97, 97, 97, 1);
+  --admin-fill-secondary: rgba(255, 255, 255, 0.08);
+  --admin-fill-tertiary: rgba(48, 48, 48, 1);
+  --admin-fill-brand: rgba(255, 255, 255, 1);
+  --admin-fill-brand-hover: rgba(243, 243, 243, 1);
+  --admin-text: rgba(227, 227, 227, 1);
+  --admin-text-secondary: rgba(181, 181, 181, 1);
+  --admin-text-disabled: rgba(74, 74, 74, 1);
+  --admin-text-on-brand: rgba(48, 48, 48, 1);
+  --admin-border: rgba(74, 74, 74, 1);
+  --admin-border-hover: rgba(97, 97, 97, 1);
+  --admin-border-secondary: rgba(74, 74, 74, 1);
+  --admin-input-border: rgba(97, 97, 97, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--admin-font-sans);
+  --font-mono: var(--admin-font-mono);
+  --font-heading: var(--font-sans);
+  --font-weight-normal: var(--admin-font-weight-regular);
+  --font-weight-medium: var(--admin-font-weight-medium);
+  --font-weight-semibold: var(--admin-font-weight-semibold);
+  --font-weight-bold: var(--admin-font-weight-bold);
+  --radius-none: var(--admin-radius-none);
+  --radius-xs: var(--admin-radius-xs);
+  --radius-sm: var(--admin-radius-sm);
+  --radius-md: var(--admin-radius-md);
+  --radius-lg: var(--admin-radius-lg);
+  --radius-xl: var(--admin-radius-xl);
+  --radius-2xl: var(--admin-radius-2xl);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+  --radius-full: var(--admin-radius-full);
+  --spacing: var(--admin-space-base-unit);
+  --spacing-0: 0rem;
+  --spacing-px: 0.0625rem;
+  --spacing-0-5: 0.125rem;
+  --spacing-1: 0.25rem;
+  --spacing-1-5: 0.375rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-28: 7rem;
+  --spacing-32: 8rem;
+  --breakpoint-xs: 0rem;
+  --breakpoint-sm: 30.625rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 65rem;
+  --breakpoint-xl: 90rem;
+  --shadow-xs: var(--admin-shadow-xs);
+  --shadow-sm: var(--admin-shadow-sm);
+  --shadow-md: var(--admin-shadow-md);
+  --shadow-lg: var(--admin-shadow-lg);
+  --shadow-xl: var(--admin-shadow-xl);
+  --shadow-2xl: var(--admin-shadow-2xl);
+  --text-xs: 0.6875rem;
+  --text-xs--line-height: 0.75rem;
+  --text-xs--font-weight: var(--admin-font-weight-regular);
+  --text-sm: 0.75rem;
+  --text-sm--line-height: 1rem;
+  --text-sm--font-weight: var(--admin-font-weight-regular);
+  --text-base: 0.8125rem;
+  --text-base--line-height: 1.25rem;
+  --text-base--font-weight: var(--admin-font-weight-regular);
+  --text-lg: 0.875rem;
+  --text-lg--line-height: 1.25rem;
+  --text-lg--font-weight: var(--admin-font-weight-regular);
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.5rem;
+  --text-xl--font-weight: var(--admin-font-weight-semibold);
+  --default-transition-duration: var(--admin-motion-duration-base);
+  --default-transition-timing-function: var(--admin-motion-ease);
+}
+
+@layer base {
+  html,
+  body,
+  #app {
+    height: 100%;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--admin-font-sans);
+  }
+
+  * {
+    border-color: var(--border);
+    outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+  }
+}

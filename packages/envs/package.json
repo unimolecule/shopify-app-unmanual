@@ -1,0 +1,63 @@
+{
+  "name": "@shamt/envs",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "author": "i7eo",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
+    },
+    "./constants": {
+      "types": "./src/constants/index.ts",
+      "import": "./src/constants/index.ts",
+      "require": "./src/constants/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.mts",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.mts",
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.cjs"
+      },
+      "./constants": {
+        "types": "./dist/constants/index.d.mts",
+        "import": "./dist/constants/index.mjs",
+        "require": "./dist/constants/index.cjs"
+      },
+      "./package.json": "./package.json"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown --config ./build.config.ts",
+    "dev": "node --env-file=../../.env.development --run bundle",
+    "build": "node --env-file=../../.env.production --run bundle",
+    "format": "prettier \"./**/*.{js,ts,jsx,tsx,md,json,jsonc}\" --write",
+    "lint": "TIMING=1 eslint \"./**/*.{js,jsx,ts,tsx,md,json,jsonc}\" --fix",
+    "clean": "run-p \"clean:**\"",
+    "clean:cache": "rimraf dist",
+    "clean:deps": "rimraf node_modules"
+  },
+  "dependencies": {
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@unconfig/ts-config": "catalog:dx",
+    "tsdown": "catalog:dx",
+    "typescript": "catalog:"
+  }
+}

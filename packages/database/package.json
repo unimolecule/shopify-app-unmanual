@@ -1,0 +1,114 @@
+{
+  "name": "@shamt/database",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "author": "i7eo",
+  "license": "MIT",
+  "exports": {
+    "./constants": {
+      "types": "./src/constants/index.ts",
+      "import": "./src/constants/index.ts",
+      "require": "./src/constants/index.ts"
+    },
+    "./entities": {
+      "types": "./src/entities/index.ts",
+      "import": "./src/entities/index.ts",
+      "require": "./src/entities/index.ts"
+    },
+    "./entities/*": {
+      "types": "./src/entities/*/index.ts",
+      "import": "./src/entities/*/index.ts",
+      "require": "./src/entities/*/index.ts"
+    },
+    "./models": {
+      "types": "./src/models/index.ts",
+      "import": "./src/models/index.ts",
+      "require": "./src/models/index.ts"
+    },
+    "./models/*": {
+      "types": "./src/models/*/index.ts",
+      "import": "./src/models/*/index.ts",
+      "require": "./src/models/*/index.ts"
+    },
+    "./schemas": {
+      "types": "./src/schemas/index.ts",
+      "import": "./src/schemas/index.ts",
+      "require": "./src/schemas/index.ts"
+    },
+    "./schemas/*": {
+      "types": "./src/schemas/*/index.ts",
+      "import": "./src/schemas/*/index.ts",
+      "require": "./src/schemas/*/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "exports": {
+      "./constants": {
+        "types": "./dist/constants/index.d.mts",
+        "import": "./dist/constants/index.mjs",
+        "require": "./dist/constants/index.cjs"
+      },
+      "./entities": {
+        "types": "./dist/entities/index.d.mts",
+        "import": "./dist/entities/index.mjs",
+        "require": "./dist/entities/index.cjs"
+      },
+      "./entities/*": {
+        "types": "./dist/entities/*/index.d.mts",
+        "import": "./dist/entities/*/index.mjs",
+        "require": "./dist/entities/*/index.cjs"
+      },
+      "./models": {
+        "types": "./dist/models/index.d.mts",
+        "import": "./dist/models/index.mjs",
+        "require": "./dist/models/index.cjs"
+      },
+      "./models/*": {
+        "types": "./dist/models/*/index.d.mts",
+        "import": "./dist/models/*/index.mjs",
+        "require": "./dist/models/*/index.cjs"
+      },
+      "./schemas": {
+        "types": "./dist/schemas/index.d.mts",
+        "import": "./dist/schemas/index.mjs",
+        "require": "./dist/schemas/index.cjs"
+      },
+      "./schemas/*": {
+        "types": "./dist/schemas/*/index.d.mts",
+        "import": "./dist/schemas/*/index.mjs",
+        "require": "./dist/schemas/*/index.cjs"
+      },
+      "./package.json": "./package.json"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown --config ./build.config.ts",
+    "dev": "node --env-file=../../.env.development --run bundle",
+    "build": "node --env-file=../../.env.production --run bundle",
+    "test": "tsx --test tests/**/*.test.ts",
+    "format": "prettier \"./**/*.{js,ts,jsx,tsx,md,json,jsonc}\" --write",
+    "lint": "TIMING=1 eslint \"./**/*.{js,jsx,ts,tsx,md,json,jsonc}\" --fix",
+    "clean": "run-p \"clean:**\"",
+    "clean:cache": "rimraf dist",
+    "clean:deps": "rimraf node_modules"
+  },
+  "dependencies": {
+    "@shamt/app-env": "workspace:*",
+    "drizzle-orm": "catalog:drizzle",
+    "drizzle-zod": "catalog:drizzle",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@unconfig/ts-config": "catalog:dx",
+    "@unimolecule/utils": "catalog:",
+    "drizzle-kit": "catalog:drizzle",
+    "tsdown": "catalog:dx",
+    "typescript": "catalog:"
+  }
+}

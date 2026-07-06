@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "composite": false,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "rootDir": "..",
+    "types": ["node", "vitest", "@cloudflare/workers-types"],
+    "allowJs": true,
+    "declaration": false,
+    "declarationMap": false,
+    "emitDeclarationOnly": false,
+    "noEmit": true
+  },
+  "include": ["../vitest.config.ts", "./**/*.ts", "../typings/**/*"],
+  "exclude": ["../dist/**/*", "../node_modules/**/*"]
+}

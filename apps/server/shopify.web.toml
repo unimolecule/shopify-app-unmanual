@@ -1,0 +1,6 @@
+roles = ["backend"]
+port = 10001
+
+[commands]
+dev = "pnpm cf:dev"
+build = "pnpm cf:deploy"

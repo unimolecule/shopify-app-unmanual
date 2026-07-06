@@ -1,0 +1,6 @@
+export const DEFAULT_APP_SCHEDULER_PROVIDERS = {
+  PGBOSS: "pg-boss",
+  CRONTRIGGERS: "cron-triggers",
+} as const;
+export type DEFAULT_APP_SCHEDULER_PROVIDERS_VALUES =
+  (typeof DEFAULT_APP_SCHEDULER_PROVIDERS)[keyof typeof DEFAULT_APP_SCHEDULER_PROVIDERS];
