@@ -1,6 +1,6 @@
 import { z } from "@hono/zod-openapi";
-import { PRODUCT_EXPORT_STATUS_VALUES } from "@shamt/database/constants";
-import { ProductExportSchema as DatabaseProductExportSchema } from "@shamt/database/entities/plain-zod-schema";
+import { PRODUCT_EXPORT_STATUS_VALUES } from "@unimolecule/shopify-app-unmanual-database/constants";
+import { ProductExportSchema as DatabaseProductExportSchema } from "@unimolecule/shopify-app-unmanual-database/entities/plain-zod-schema";
 import { PaginationQuerySchema, PaginationSchema } from "@/shared/models";
 import { PRODUCT_EXPORT_TEMPLATE_CODES } from "./templates";
 import { PRODUCT_EXPORT_STATUSES } from "./utils";

@@ -849,7 +849,7 @@ Run:
 
 ```bash
 pnpm --dir apps/server run build
-rg "PgTextBuilder|drizzle-orm/pg-core|@shamt/database/models/postgres|postgresShopifySessions|drizzle-postgres.adapter|node:" apps/server/dist
+rg "PgTextBuilder|drizzle-orm/pg-core|@unimolecule/shopify-app-unmanual-database/models/postgres|postgresShopifySessions|drizzle-postgres.adapter|node:" apps/server/dist
 ```
 
 Expected: `rg` finds no PostgreSQL/Node-only references in Cloudflare output. If it finds matches only in Node output, narrow the search path to the Cloudflare dist directory configured by `apps/server/build.config.ts`.
@@ -1164,7 +1164,7 @@ Expected: Build completes without Cloudflare unresolved warnings for `node:*`, P
 Run:
 
 ```bash
-rg "PgTextBuilder|drizzle-orm/pg-core|@shamt/database/models/postgres|postgresShopifySessions|drizzle-postgres.adapter|node:fs|node:path|node:stream|pg-boss|\\bpg\\b" apps/server/dist
+rg "PgTextBuilder|drizzle-orm/pg-core|@unimolecule/shopify-app-unmanual-database/models/postgres|postgresShopifySessions|drizzle-postgres.adapter|node:fs|node:path|node:stream|pg-boss|\\bpg\\b" apps/server/dist
 ```
 
 Expected: Cloudflare output has no matches. If Node output is mixed under the same dist folder, restrict the search to the Cloudflare output directory and document that path.
@@ -1221,7 +1221,7 @@ Ensure `apps/server/docs/guides/runtime-capabilities.md` remains the canonical d
 Run:
 
 ```bash
-pnpm -F @shamt/server exec prettier "docs/**/*.md" --check
+pnpm -F @unimolecule/shopify-app-unmanual-server exec prettier "docs/**/*.md" --check
 ```
 
 Expected: All changed docs are formatted.
@@ -1276,7 +1276,7 @@ Expected:
 Run:
 
 ```bash
-rg -n "@shopify/shopify-app-session-storage-drizzle.*postgres|drizzle-orm/pg-core|@shamt/database/models/postgres|node:" apps/server/src/app/runtime/isolate apps/server/src/infra/database/isolate.ts apps/server/src/infra/bucket/isolate.ts
+rg -n "@shopify/shopify-app-session-storage-drizzle.*postgres|drizzle-orm/pg-core|@unimolecule/shopify-app-unmanual-database/models/postgres|node:" apps/server/src/app/runtime/isolate apps/server/src/infra/database/isolate.ts apps/server/src/infra/bucket/isolate.ts
 ```
 
 Expected: No Cloudflare/isolate source imports Node/PostgreSQL-only modules.

@@ -81,8 +81,12 @@ describe("module database entity schemas", () => {
       schemaPaths.map(async (schemaPath) => {
         const source = await readFile(resolve(rootDir, schemaPath), "utf8");
 
-        expect(source).not.toContain("@shamt/database/schemas/postgres");
-        expect(source).toContain("@shamt/database/entities/plain-zod-schema");
+        expect(source).not.toContain(
+          "@unimolecule/shopify-app-unmanual-database/schemas/postgres",
+        );
+        expect(source).toContain(
+          "@unimolecule/shopify-app-unmanual-database/entities/plain-zod-schema",
+        );
       }),
     );
   });

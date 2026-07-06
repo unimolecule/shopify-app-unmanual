@@ -1,5 +1,5 @@
 {
-  "name": "@shamt/app-env",
+  "name": "@unimolecule/shopify-app-unmanual-app-env",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -52,7 +52,7 @@
     "clean:deps": "rimraf node_modules"
   },
   "dependencies": {
-    "@shamt/envs": "workspace:*",
+    "@unimolecule/shopify-app-unmanual-envs": "workspace:*",
     "zod": "catalog:"
   },
   "devDependencies": {

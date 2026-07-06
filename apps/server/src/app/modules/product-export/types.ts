@@ -4,7 +4,7 @@ import type { PaginatedPage, PaginationInput } from "@/shared/models";
 import type {
   SelectPostgresProductExport,
   SelectPostgresProductExportPart,
-} from "@shamt/database/entities";
+} from "@unimolecule/shopify-app-unmanual-database/entities";
 
 export type ProductExportRecord = SelectPostgresProductExport;
 export type ProductExportPartRecord = SelectPostgresProductExportPart;

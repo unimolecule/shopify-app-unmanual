@@ -240,7 +240,7 @@ Shopify session storage 由 `RuntimeCapabilities` 提供，并在 runtime bounda
 
 Cloudflare 下的 D1 binding 在 config schema 中允许 bootstrap 阶段缺失。真正创建 database 时，Cloudflare runtime capability 会强校验 `APP_DATABASE_D1_BINDING` 指向的 request-bound binding。这样 route metadata 等模块 import 阶段不会因为 request-bound binding 尚未进入而失败，但 session storage 使用点仍然会快速失败。
 
-数据库 schema 来自 `@shamt/database` 的 PostgreSQL / SQLite models，与 file module 共享同一个 `runtimeCapabilities.database()`。本地验证可使用：
+数据库 schema 来自 `@unimolecule/shopify-app-unmanual-database` 的 PostgreSQL / SQLite models，与 file module 共享同一个 `runtimeCapabilities.database()`。本地验证可使用：
 
 ```bash
 pnpm --dir apps/server run db:seed:dev:pg

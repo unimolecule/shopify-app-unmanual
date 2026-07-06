@@ -186,13 +186,13 @@ shopify:refresh-webhook-subscriptions
 聚焦 scheduler 测试：
 
 ```bash
-pnpm -F @shamt/server exec vitest run tests/scheduler.test.ts
+pnpm -F @unimolecule/shopify-app-unmanual-server exec vitest run tests/scheduler.test.ts
 ```
 
 类型检查：
 
 ```bash
-pnpm -F @shamt/server exec tsc --noEmit
+pnpm -F @unimolecule/shopify-app-unmanual-server exec tsc --noEmit
 ```
 
 当前测试覆盖：

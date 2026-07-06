@@ -1,4 +1,4 @@
-import { postgresFiles } from "@shamt/database/models/postgres";
+import { postgresFiles } from "@unimolecule/shopify-app-unmanual-database/models/postgres";
 import { and, desc, eq, isNull, lt, ne, or, sql } from "drizzle-orm";
 import {
   getListCursor,

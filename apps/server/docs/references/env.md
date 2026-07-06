@@ -62,7 +62,7 @@ Cloudflare 下 `envConfig` 来自 `c.env`，其中包含 request-bound 平台 bi
 
 如果签名没有变化，provider 会直接返回上一次解析好的 `RuntimeConfig`，不会每个请求都重新跑 schema parse。
 
-env provider 的签名由 `@shamt/app-env` 的 `configSchema.shape` 自动生成，不再手写字段清单。新增 env schema 文件时，只要字段被合入 `configSchema`，`getEnvProvider()` 的缓存签名就会自动包含这些字段。
+env provider 的签名由 `@unimolecule/shopify-app-unmanual-app-env` 的 `configSchema.shape` 自动生成，不再手写字段清单。新增 env schema 文件时，只要字段被合入 `configSchema`，`getEnvProvider()` 的缓存签名就会自动包含这些字段。
 
 签名不会把平台 binding 对象整体 stringify。Cloudflare D1 这类 binding 只记录是否存在，避免把 request-bound 对象细节写入缓存 key。
 
@@ -134,7 +134,7 @@ type CloudflareBindings = {
 
 其他字段来自 schema 默认值，只有需要覆盖默认行为或启用对应 provider 时才写入 env file，例如 `APP_NAME`、`APP_API_PREFIX`、`APP_REQUEST_TIMEOUT`、`APP_LOCALE`、`APP_USE_CLUSTER`、`APP_LOGGER_DIR`、`APP_LOGGER_LEVEL`、`APP_LOGGER_MAX_SIZE`、`APP_FILE_UPLOAD_TIMEOUT`、`APP_FILE_UPLOAD_MULTIPLE_SIZE`、`APP_FILE_DIR`、`APP_FILE_EXPIRE`、`APP_FILE_MAX_SIZE`、`APP_BUCKET_R2_URL`、`APP_BUCKET_R2_BINDING`、`APP_BUCKET_R2_NAME`、`APP_DATABASE_URL`、`APP_DATABASE_D1_BINDING`、`APP_DATABASE_D1_NAME`、`APP_DATABASE_D1_ID`、`APP_QUEUE_PROVIDER`、`APP_QUEUE_NAME`、`APP_QUEUE_BINDING`、`APP_QUEUE_CONSUMER_MAX_BATCH_SIZE`、`APP_QUEUE_CONSUMER_MAX_RETRIES`、`APP_SCHEDULER_PROVIDER`、`APP_SCHEDULER_CRON_VALUE`、`APP_CLOUDFLARE_WORKER_NAME`、`APP_CLOUDFLARE_WORKER_ACCOUNT_ID`、`APP_CLOUDFLARE_USER_TOKEN`、`APP_CACHE_EXPIRE`、`APP_CACHE_MAX_SIZE`、`APP_CACHE_REDIS_URL`。
 
-这些字段在 `@shamt/app-env` schema 中多为 optional，是为了允许同一份 schema 覆盖 Node、Cloudflare、PostgreSQL、D1、R2 和 memory 多种组合。真正是否必填由 runtime/provider 矩阵决定。
+这些字段在 `@unimolecule/shopify-app-unmanual-app-env` schema 中多为 optional，是为了允许同一份 schema 覆盖 Node、Cloudflare、PostgreSQL、D1、R2 和 memory 多种组合。真正是否必填由 runtime/provider 矩阵决定。
 
 ## Cloudflare 资源 Env
 
@@ -190,7 +190,7 @@ Node runtime 只支持 PostgreSQL。Cloudflare + D1 需要 `APP_DATABASE_D1_BIND
 | `DEPLOY_NGINX_CONF_TARGET` | `/etc/nginx/conf.d/<SHOPIFY_APP_URL host>.conf` | 生成的 Nginx 配置复制到的目标路径 |
 
 `deployment-name` 由根 `package.json` 的 `name` 派生，例如
-`@shamt/repository` 会生成 `shamt-repository-server`。这些字段适合放在
+`@unimolecule/shopify-app-unmanual` 会生成 `shamt-repository-server`。这些字段适合放在
 `.env.production` 中覆盖机器路径，但不会被浏览器 public env 注入。
 
 ## Hono AppEnv 类型
@@ -299,7 +299,7 @@ embedded 模式中，如果 callback 带有 `host`，仍可优先使用 `shopify
 ${APP_NAME}:account_session_cookie
 ```
 
-默认值来自 `@shamt/app-env` 的 `DEFAULT_APP_NAME`。如果修改 `APP_NAME`，已有浏览器 cookie 名也会变化，需要重新建立 standalone account session。
+默认值来自 `@unimolecule/shopify-app-unmanual-app-env` 的 `DEFAULT_APP_NAME`。如果修改 `APP_NAME`，已有浏览器 cookie 名也会变化，需要重新建立 standalone account session。
 
 ## normalizeEnv
 

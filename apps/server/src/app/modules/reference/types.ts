@@ -1,5 +1,5 @@
 import type { PaginatedPage, PaginationInput } from "@/shared/models";
-import type { SelectPostgresReference } from "@shamt/database/entities";
+import type { SelectPostgresReference } from "@unimolecule/shopify-app-unmanual-database/entities";
 
 export type ReferenceRecord = SelectPostgresReference;
 

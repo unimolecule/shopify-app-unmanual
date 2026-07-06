@@ -1,21 +1,21 @@
-# @shamt/app-env
+# @unimolecule/shopify-app-unmanual-app-env
 
-`@shamt/app-env` is the app-level env package for this workspace. It composes
-the runtime-neutral schemas from `@shamt/envs` with Shopify app fields, then
+`@unimolecule/shopify-app-unmanual-app-env` is the app-level env package for this workspace. It composes
+the runtime-neutral schemas from `@unimolecule/shopify-app-unmanual-envs` with Shopify app fields, then
 exports one validated `configSchema` for apps and build scripts.
 
 Use this package when code needs the complete project env contract. Use
-`@shamt/envs` directly only for lower-level constants or generic schemas.
+`@unimolecule/shopify-app-unmanual-envs` directly only for lower-level constants or generic schemas.
 
 ## Exports
 
-| Entry                         | Purpose                                                     |
-| ----------------------------- | ----------------------------------------------------------- |
-| `@shamt/app-env`              | `configSchema`, inferred types, app constants, envs exports |
-| `@shamt/app-env/constants`    | Shopify constants plus re-exported base env constants       |
-| `@shamt/app-env/package.json` | Package metadata                                            |
+| Entry                                                    | Purpose                                                     |
+| -------------------------------------------------------- | ----------------------------------------------------------- |
+| `@unimolecule/shopify-app-unmanual-app-env`              | `configSchema`, inferred types, app constants, envs exports |
+| `@unimolecule/shopify-app-unmanual-app-env/constants`    | Shopify constants plus re-exported base env constants       |
+| `@unimolecule/shopify-app-unmanual-app-env/package.json` | Package metadata                                            |
 
-The root entry also re-exports `@shamt/envs`, so app code can import the
+The root entry also re-exports `@unimolecule/shopify-app-unmanual-envs`, so app code can import the
 composed schema and shared constants from one place when that keeps call sites
 clean.
 
@@ -42,7 +42,7 @@ must stay aligned with tsdown's `.mjs`, `.cjs`, and `.d.mts` output.
 
 `configSchema` combines:
 
-- base app defaults from `@shamt/envs`
+- base app defaults from `@unimolecule/shopify-app-unmanual-envs`
 - cache, database URL, Redis, logger, env, runtime, and file schemas
 - Shopify app fields defined in this package
 - app-level database provider fields
@@ -142,7 +142,7 @@ required Wrangler bindings for the active environment.
 Parse a complete app env object:
 
 ```ts
-import { configSchema } from "@shamt/app-env";
+import { configSchema } from "@unimolecule/shopify-app-unmanual-app-env";
 
 const config = configSchema.parse(process.env);
 ```
@@ -156,7 +156,7 @@ import {
   DEFAULT_RUNTIMES,
   DEFAULT_SHOPIFY_APP_FRONTEND_TARGETS,
   DEFAULT_SHOPIFY_APP_MODES,
-} from "@shamt/app-env/constants";
+} from "@unimolecule/shopify-app-unmanual-app-env/constants";
 
 const isCloudflare = config.APP_RUNTIME === DEFAULT_RUNTIMES.CLOUDFLARE;
 const isEmbedded =

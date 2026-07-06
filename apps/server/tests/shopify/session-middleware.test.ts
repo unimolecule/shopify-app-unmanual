@@ -1,4 +1,4 @@
-import { DEFAULT_APP_DATABASE_PROVIDERS } from "@shamt/app-env";
+import { DEFAULT_APP_DATABASE_PROVIDERS } from "@unimolecule/shopify-app-unmanual-app-env";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { throwAppServerError as throwError } from "../../internal";
 import {
@@ -134,7 +134,7 @@ describe("Shopify database session storage adapter", () => {
     );
 
     const { postgresShopifySessions } =
-      await import("@shamt/database/models/postgres");
+      await import("@unimolecule/shopify-app-unmanual-database/models/postgres");
     const { createPostgresShopifySessionStorage } =
       await import("@/app/modules/shopify/session-storage/postgres");
     const db = { id: "pg-db" };
@@ -199,7 +199,7 @@ describe("Shopify database session storage adapter", () => {
     );
 
     const { sqliteShopifySessions } =
-      await import("@shamt/database/models/sqlite");
+      await import("@unimolecule/shopify-app-unmanual-database/models/sqlite");
     const { createSqliteShopifySessionStorage } =
       await import("@/app/modules/shopify/session-storage/sqlite");
     const db = { id: "d1-db" };

@@ -6,7 +6,7 @@ import {
   fileConfigSchema,
   logConfigSchema,
   redisSchema,
-} from "@shamt/envs";
+} from "@unimolecule/shopify-app-unmanual-envs";
 import { appEnvConfigSchema as $appConfigSchema } from "./app";
 import { bucketConfigSchema } from "./bucket";
 import { cloudflareConfigSchema } from "./cloudflare";

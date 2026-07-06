@@ -1,5 +1,5 @@
 import { z } from "@hono/zod-openapi";
-import { FileSchema as DatabaseFileSchema } from "@shamt/database/entities/plain-zod-schema";
+import { FileSchema as DatabaseFileSchema } from "@unimolecule/shopify-app-unmanual-database/entities/plain-zod-schema";
 import { PaginationQuerySchema, PaginationSchema } from "@/shared/models";
 
 export const FileStatusSchema = DatabaseFileSchema.shape.status;

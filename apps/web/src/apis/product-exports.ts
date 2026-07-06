@@ -1,11 +1,11 @@
 import { shopifyClient } from "@/utils/client.shopify";
 import { throwAppWebError as throwError } from "../../internal";
 import type { ApiResponse, JsonSerializedDates } from "@/typings/json-api";
+import type { HttpRequestConfig } from "@unimolecule/oh-my-fetch";
 import type {
   InsertPostgresProductExport,
   SelectPostgresProductExport,
-} from "@shamt/database/entities";
-import type { HttpRequestConfig } from "@unimolecule/oh-my-fetch";
+} from "@unimolecule/shopify-app-unmanual-database/entities";
 
 export type ProductExportStatus = SelectPostgresProductExport["status"];
 export type ProductExportTemplateCode = SelectPostgresProductExport["template"];

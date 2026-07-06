@@ -1,3 +1,3 @@
 export * from "./configs";
 export * from "./constants";
-export * from "@shamt/envs";
+export * from "@unimolecule/shopify-app-unmanual-envs";

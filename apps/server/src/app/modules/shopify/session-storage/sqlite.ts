@@ -1,4 +1,4 @@
-import { sqliteShopifySessions } from "@shamt/database/models/sqlite";
+import { sqliteShopifySessions } from "@unimolecule/shopify-app-unmanual-database/models/sqlite";
 import type { ShopifySessionStorage } from "./types";
 import type { D1DatabaseClient } from "@/infra/database";
 

@@ -26,30 +26,30 @@ pnpm dev:tunnel
 
 ### Apps
 
-| Workspace                                   | 类型 | 说明                                                                                   |
-| ------------------------------------------- | ---- | -------------------------------------------------------------------------------------- |
-| [`@shamt/server`](./apps/server#readme)     | app  | Hono 服务端，负责 Shopify auth、app shell、Admin API routes、webhooks 和运行时适配器。 |
-| [`@shamt/web`](./apps/web#readme)           | app  | 面向 Shopify 管理端 UI 的 Vite React 前端。                                            |
-| [`@shamt/document`](./apps/document#readme) | app  | VitePress 文档 workspace。                                                             |
+| Workspace                                                              | 类型 | 说明                                                                                   |
+| ---------------------------------------------------------------------- | ---- | -------------------------------------------------------------------------------------- |
+| [`@unimolecule/shopify-app-unmanual-server`](./apps/server#readme)     | app  | Hono 服务端，负责 Shopify auth、app shell、Admin API routes、webhooks 和运行时适配器。 |
+| [`@unimolecule/shopify-app-unmanual-web`](./apps/web#readme)           | app  | 面向 Shopify 管理端 UI 的 Vite React 前端。                                            |
+| [`@unimolecule/shopify-app-unmanual-document`](./apps/document#readme) | app  | VitePress 文档 workspace。                                                             |
 
 ### Shared Packages
 
-| Workspace                                       | 类型    | 说明                                                   |
-| ----------------------------------------------- | ------- | ------------------------------------------------------ |
-| [`@shamt/envs`](./packages/envs#readme)         | package | 运行时无关的环境常量和 Zod schema。                    |
-| [`@shamt/app-env`](./packages/app-env#readme)   | package | 基于 env 基础包组合出的 Shopify 应用环境 schema。      |
-| [`@shamt/database`](./packages/database#readme) | package | 应用数据使用的 Drizzle schema、model、常量和推导类型。 |
+| Workspace                                                                  | 类型    | 说明                                                   |
+| -------------------------------------------------------------------------- | ------- | ------------------------------------------------------ |
+| [`@unimolecule/shopify-app-unmanual-envs`](./packages/envs#readme)         | package | 运行时无关的环境常量和 Zod schema。                    |
+| [`@unimolecule/shopify-app-unmanual-app-env`](./packages/app-env#readme)   | package | 基于 env 基础包组合出的 Shopify 应用环境 schema。      |
+| [`@unimolecule/shopify-app-unmanual-database`](./packages/database#readme) | package | 应用数据使用的 Drizzle schema、model、常量和推导类型。 |
 
 ## 架构
 
 依赖方向保持单向：
 
 ```text
-@shamt/envs
-  -> @shamt/app-env
+@unimolecule/shopify-app-unmanual-envs
+  -> @unimolecule/shopify-app-unmanual-app-env
   -> apps/server / apps/web
 
-@shamt/database
+@unimolecule/shopify-app-unmanual-database
   -> apps/server / apps/web
 
 external runtime-neutral libraries
@@ -92,10 +92,10 @@ components。
 功能开发时优先使用聚焦命令：
 
 ```bash
-pnpm -F @shamt/server test
-pnpm -F @shamt/web test
-pnpm -F @shamt/web build
-pnpm -F @shamt/envs build
+pnpm -F @unimolecule/shopify-app-unmanual-server test
+pnpm -F @unimolecule/shopify-app-unmanual-web test
+pnpm -F @unimolecule/shopify-app-unmanual-web build
+pnpm -F @unimolecule/shopify-app-unmanual-envs build
 ```
 
 ## 测试和类型检查
@@ -107,8 +107,8 @@ tsconfig，包含测试运行器/运行时类型，并设置 `noEmit`。
 示例：
 
 ```bash
-pnpm -F @shamt/server exec tsc -p tests/tsconfig.json --noEmit
-pnpm -F @shamt/web exec tsc -p tests/tsconfig.json --noEmit
+pnpm -F @unimolecule/shopify-app-unmanual-server exec tsc -p tests/tsconfig.json --noEmit
+pnpm -F @unimolecule/shopify-app-unmanual-web exec tsc -p tests/tsconfig.json --noEmit
 ```
 
 ## 文档

@@ -1,5 +1,5 @@
-import { DEFAULT_APP_DATABASE_PROVIDERS } from "@shamt/app-env";
-import * as postgresDatabaseSchema from "@shamt/database/models/postgres";
+import { DEFAULT_APP_DATABASE_PROVIDERS } from "@unimolecule/shopify-app-unmanual-app-env";
+import * as postgresDatabaseSchema from "@unimolecule/shopify-app-unmanual-database/models/postgres";
 import {
   getDatabaseCheckErrorMessage,
   getDatabaseCheckLatencyMs,

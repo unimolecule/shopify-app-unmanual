@@ -1,7 +1,7 @@
 import {
   postgresProductExportParts,
   postgresProductExports,
-} from "@shamt/database/models/postgres";
+} from "@unimolecule/shopify-app-unmanual-database/models/postgres";
 import {
   and,
   asc,

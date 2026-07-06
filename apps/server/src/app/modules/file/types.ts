@@ -1,8 +1,8 @@
 import type { BucketProvider } from "@/infra/bucket";
 import type { RuntimeConfig } from "@/infra/env";
 import type { PaginatedPage, PaginationInput } from "@/shared/models";
-import type { SelectPostgresFile } from "@shamt/database/entities";
-import type { File as PlainFile } from "@shamt/database/entities/plain-zod-schema";
+import type { SelectPostgresFile } from "@unimolecule/shopify-app-unmanual-database/entities";
+import type { File as PlainFile } from "@unimolecule/shopify-app-unmanual-database/entities/plain-zod-schema";
 import type { Context } from "hono";
 
 export type FileStatus = SelectPostgresFile["status"];

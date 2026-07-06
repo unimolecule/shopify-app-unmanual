@@ -1,7 +1,7 @@
 import {
   sqliteProductExportParts,
   sqliteProductExports,
-} from "@shamt/database/models/sqlite";
+} from "@unimolecule/shopify-app-unmanual-database/models/sqlite";
 import {
   and,
   asc,

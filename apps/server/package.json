@@ -1,5 +1,5 @@
 {
-  "name": "@shamt/server",
+  "name": "@unimolecule/shopify-app-unmanual-server",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -43,8 +43,8 @@
     "@logtape/file": "^2.2.3",
     "@logtape/logtape": "^2.2.3",
     "@scalar/hono-api-reference": "^0.11.8",
-    "@shamt/app-env": "workspace:*",
-    "@shamt/database": "workspace:*",
+    "@unimolecule/shopify-app-unmanual-app-env": "workspace:*",
+    "@unimolecule/shopify-app-unmanual-database": "workspace:*",
     "@shopify/shopify-api": "^13.1.0",
     "@shopify/shopify-app-session-storage": "^5.0.1",
     "@shopify/shopify-app-session-storage-drizzle": "^4.0.1",

@@ -1,4 +1,4 @@
-# `@shamt/web`
+# `@unimolecule/shopify-app-unmanual-web`
 
 `apps/web` 是 Shopify app 的前端工作区，使用 Vite、React、TanStack Router、TanStack Query 和 Tailwind CSS v4。Admin UI 以 Shopify Polaris web components 为主，浏览器侧通过构建期注入的 public env 感知 runtime、mode 和 frontend target，不直接读取 Node/Vite 侧完整 env。
 
@@ -7,9 +7,9 @@
 从 `apps/web` 工作区启动时，脚本会通过 Node 的 `--env-file` 读取仓库根目录 env file，并用 `tsx/esm` 让 Vite config 可以直接加载 workspace TypeScript 包。
 
 ```sh
-pnpm -F @shamt/web dev
-pnpm -F @shamt/web build
-pnpm -F @shamt/web test
+pnpm -F @unimolecule/shopify-app-unmanual-web dev
+pnpm -F @unimolecule/shopify-app-unmanual-web build
+pnpm -F @unimolecule/shopify-app-unmanual-web test
 ```
 
 对应脚本：
@@ -41,7 +41,7 @@ node --env-file=../../.env.production --import tsx/esm ./node_modules/vite/bin/v
 
 ## Env 分层
 
-Node/Vite 侧配置集中在 [`configs/env.ts`](./configs/env.ts)。它使用 `@shamt/app-env` 的 `configSchema` 校验 `process.env`，并导出校验后的 `env` 给 `vite.config.ts` 和 Vite plugins 使用。
+Node/Vite 侧配置集中在 [`configs/env.ts`](./configs/env.ts)。它使用 `@unimolecule/shopify-app-unmanual-app-env` 的 `configSchema` 校验 `process.env`，并导出校验后的 `env` 给 `vite.config.ts` 和 Vite plugins 使用。
 
 浏览器侧代码不要 import `configs/env.ts`。该文件会读取完整 env，其中包含 Shopify secret、Redis、database 等服务端配置。`src` 下如果需要 runtime、mode、frontend target 等公开值，统一从 [`src/utils/public-env.ts`](./src/utils/public-env.ts) 获取。
 

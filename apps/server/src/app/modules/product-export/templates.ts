@@ -1,4 +1,4 @@
-import { PRODUCT_EXPORT_TEMPLATE_CODE_VALUES } from "@shamt/database/constants";
+import { PRODUCT_EXPORT_TEMPLATE_CODE_VALUES } from "@unimolecule/shopify-app-unmanual-database/constants";
 
 export const PRODUCT_EXPORT_TEMPLATE_CODES =
   PRODUCT_EXPORT_TEMPLATE_CODE_VALUES;

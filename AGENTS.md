@@ -30,7 +30,7 @@
 ## Monorepo Boundaries
 
 - Prefer existing workspace packages, helpers, types, constants, schemas, and patterns before introducing new logic.
-- Treat package names as semantic ownership boundaries: use `@shamt/app-env` for app env contracts, `@shamt/envs` for runtime-neutral env primitives, and `@shamt/database` for database-backed shapes.
+- Treat package names as semantic ownership boundaries: use `@unimolecule/shopify-app-unmanual-app-env` for app env contracts, `@unimolecule/shopify-app-unmanual-envs` for runtime-neutral env primitives, and `@unimolecule/shopify-app-unmanual-database` for database-backed shapes.
 - App-local schemas, types, enums, or utilities are acceptable only for app-boundary adaptation, browser-safe serialization, transport concerns, or behavior not owned by a package.
 - Packages must not import `apps/*` or app runtime infrastructure. Import sibling package-owned concepts when dependency direction allows it.
 - Use TypeScript `tsconfig` path aliases only under `apps/*`; packages under `packages/*` must not use `tsconfig` aliases.
@@ -73,7 +73,7 @@
 - Fixed tunnel development: `pnpm dev:tunnel`
 - Deploy: `pnpm deploy`
 - Workspace checks: `pnpm lint`, `pnpm test`, `pnpm build`, `pnpm format`
-- Prefer focused commands, for example `pnpm -F @shamt/server test`, `pnpm -F @shamt/web build`, or `pnpm -F @shamt/database build`.
+- Prefer focused commands, for example `pnpm -F @unimolecule/shopify-app-unmanual-server test`, `pnpm -F @unimolecule/shopify-app-unmanual-web build`, or `pnpm -F @unimolecule/shopify-app-unmanual-database build`.
 - Run the narrowest relevant lint, test, type, or build command before claiming code changes are complete.
 - For docs-only changes, read back the rendered Markdown structure mentally or with file reads; tests are not required unless docs generation scripts changed.
 - When a workspace has tests under a local `tests/` directory, keep a `tests/tsconfig.json` next to those tests and verify it with `tsc -p tests/tsconfig.json --noEmit` before treating test TypeScript errors as fixed.

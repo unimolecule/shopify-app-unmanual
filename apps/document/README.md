@@ -1,4 +1,4 @@
-# `@shamt/document`
+# `@unimolecule/shopify-app-unmanual-document`
 
 `apps/document` is the VitePress documentation workspace. It is currently a
 private app package and does not participate in the Shopify runtime path.
@@ -6,9 +6,9 @@ private app package and does not participate in the Shopify runtime path.
 ## Scripts
 
 ```bash
-pnpm -F @shamt/document dev
-pnpm -F @shamt/document build
-pnpm -F @shamt/document preview
+pnpm -F @unimolecule/shopify-app-unmanual-document dev
+pnpm -F @unimolecule/shopify-app-unmanual-document build
+pnpm -F @unimolecule/shopify-app-unmanual-document preview
 ```
 
 The scripts are Bun-oriented and load root env files before running VitePress.

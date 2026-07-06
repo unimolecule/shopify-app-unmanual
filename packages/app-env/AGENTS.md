@@ -2,14 +2,14 @@
 
 ## Scope
 
-`@shamt/app-env` composes runtime-neutral schemas from `@shamt/envs` with Shopify app, database provider, bucket provider, Cloudflare, queue, and scheduler fields.
+`@unimolecule/shopify-app-unmanual-app-env` composes runtime-neutral schemas from `@unimolecule/shopify-app-unmanual-envs` with Shopify app, database provider, bucket provider, Cloudflare, queue, and scheduler fields.
 
 ## Boundary Rules
 
 - This package defines and validates env shape; it must not read env files or process env directly.
 - Apps decide when and where to call `configSchema.parse(...)`.
 - Browser code must not import the full parsed app env contract.
-- Lower-level generic schemas belong in `@shamt/envs`; Shopify or app-specific schema belongs here.
+- Lower-level generic schemas belong in `@unimolecule/shopify-app-unmanual-envs`; Shopify or app-specific schema belongs here.
 
 ## Schema Rules
 
@@ -32,5 +32,5 @@
 
 ## Verification
 
-- Run `pnpm -F @shamt/app-env build` after schema, constants, or export changes.
-- Run `pnpm -F @shamt/app-env lint` after broad TypeScript or Markdown edits.
+- Run `pnpm -F @unimolecule/shopify-app-unmanual-app-env build` after schema, constants, or export changes.
+- Run `pnpm -F @unimolecule/shopify-app-unmanual-app-env lint` after broad TypeScript or Markdown edits.

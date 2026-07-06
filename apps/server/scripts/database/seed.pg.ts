@@ -1,8 +1,8 @@
-import { DEFAULT_APP_BUCKET_PROVIDERS } from "@shamt/app-env";
+import { DEFAULT_APP_BUCKET_PROVIDERS } from "@unimolecule/shopify-app-unmanual-app-env";
 import {
   postgresFiles,
   postgresShopifySessions,
-} from "@shamt/database/models/postgres";
+} from "@unimolecule/shopify-app-unmanual-database/models/postgres";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
 import { requirePostgresSeedUrl } from "./env";

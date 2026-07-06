@@ -1,4 +1,4 @@
-# @shamt/envs
+# @unimolecule/shopify-app-unmanual-envs
 
 <p><a href="./README.md">English</a> | <strong>中文</strong></p>
 
@@ -7,7 +7,7 @@
 - [介绍](#介绍)
 - [设计与架构](#设计与架构)
 - [静态 Env 与运行时设置](#静态-env-与运行时设置)
-- [与 @shamt/app-env 的关系](#与-shamtapp-env-的关系)
+- [与 @unimolecule/shopify-app-unmanual-app-env 的关系](#与-shamtapp-env-的关系)
 - [输入与输出](#输入与输出)
 - [构建产物](#构建产物)
 - [使用方式](#使用方式)
@@ -15,13 +15,13 @@
 
 ## 介绍
 
-`@shamt/envs` 是基础环境常量与 Zod 配置 schema 包。它集中维护跨应用共享的默认值、运行环境枚举、运行时枚举、HTTP 状态码、响应默认结构、日志配置、缓存配置、数据库 URL 配置、Redis 配置、文件上传限制、请求限制等。
+`@unimolecule/shopify-app-unmanual-envs` 是基础环境常量与 Zod 配置 schema 包。它集中维护跨应用共享的默认值、运行环境枚举、运行时枚举、HTTP 状态码、响应默认结构、日志配置、缓存配置、数据库 URL 配置、Redis 配置、文件上传限制、请求限制等。
 
 这个包不读取 `process.env`，也不负责判断当前部署平台，也不包含 Shopify app 专属 schema。它只提供可复用的常量、类型和 schema，让业务应用在自己的 bootstrap、runtime env provider 或中间件中完成实际解析。
 
 ## 设计与架构
 
-`@shamt/envs` 的设计目标是让环境配置有清晰边界：
+`@unimolecule/shopify-app-unmanual-envs` 的设计目标是让环境配置有清晰边界：
 
 - `constants`: 只放稳定默认值和枚举式常量，例如 `DEFAULT_ENVS`、`DEFAULT_RUNTIMES`、`HTTP_STATUS_CODES`、`RESPONSE_SUCCESS_CODE`。
 - `configs`: 使用 Zod 描述可解析的环境变量结构，例如 `appConfigSchema`、`envConfigSchema`、`logConfigSchema`。
@@ -33,7 +33,7 @@ Schema 只负责验证和默认值，不绑定 Node、Cloudflare Workers、Verce
 
 ## 静态 Env 与运行时设置分析
 
-`@shamt/envs` 将 env 视为部署期配置。像 `APP_ENV`、`APP_RUNTIME`、secrets、Shopify 凭据、服务 endpoint、平台 bindings 这类值，应该在应用启动或请求 bootstrap 阶段解析，然后以 typed config 的方式传递给应用使用。
+`@unimolecule/shopify-app-unmanual-envs` 将 env 视为部署期配置。像 `APP_ENV`、`APP_RUNTIME`、secrets、Shopify 凭据、服务 endpoint、平台 bindings 这类值，应该在应用启动或请求 bootstrap 阶段解析，然后以 typed config 的方式传递给应用使用。
 
 不要把 env 当成完整的动态配置系统。即使平台允许从控制台修改变量，应用代码也应该默认 env 变更属于运维变更，可能需要重新部署、新 isolate 或进程重启后，所有请求才能稳定读到同一个值。
 
@@ -70,14 +70,14 @@ Feature flag 服务：比如 OpenFeature/Unleash/LaunchDarkly/Statsig 等。
 <https://docs.getunleash.io/guides/feature-flag-best-practices>
 <https://octopus.com/devops/feature-flags/>
 
-## 与 @shamt/app-env 的关系
+## 与 @unimolecule/shopify-app-unmanual-app-env 的关系
 
-`@shamt/envs` 只提供 runtime-neutral 的基础积木。当前 app 使用
-`@shamt/app-env` 聚合项目 schema，其中包含 `SHOPIFY_APP_MODE`、
+`@unimolecule/shopify-app-unmanual-envs` 只提供 runtime-neutral 的基础积木。当前 app 使用
+`@unimolecule/shopify-app-unmanual-app-env` 聚合项目 schema，其中包含 `SHOPIFY_APP_MODE`、
 `SHOPIFY_APP_FRONTEND_TARGET`、`SHOPIFY_APP_KEY`、`SCOPES` 等 Shopify 字段。
 
 ```ts
-import { configSchema } from "@shamt/app-env";
+import { configSchema } from "@unimolecule/shopify-app-unmanual-app-env";
 
 const config = configSchema.parse(process.env);
 ```
@@ -113,7 +113,7 @@ const config = configSchema.parse(process.env);
 | `./constants` types   | `dist/constants/index.d.mts` |
 
 根入口不再重新导出 `./constants`；消费者只需要稳定常量时，应从
-`@shamt/envs/constants` 导入。workspace 源码 exports 仍指向 `src/*`，发布用
+`@unimolecule/shopify-app-unmanual-envs/constants` 导入。workspace 源码 exports 仍指向 `src/*`，发布用
 `publishConfig.exports` 指向构建后的 `dist/*` 文件。
 
 ## 使用方式
@@ -121,7 +121,7 @@ const config = configSchema.parse(process.env);
 解析标准 runtime env 字段：
 
 ```ts
-import { envConfigSchema } from "@shamt/envs";
+import { envConfigSchema } from "@unimolecule/shopify-app-unmanual-envs";
 
 const config = envConfigSchema.parse({
   APP_ENV: "development",
@@ -139,7 +139,7 @@ import {
   appConfigSchema,
   envConfigSchema,
   extendConfigSchema,
-} from "@shamt/envs";
+} from "@unimolecule/shopify-app-unmanual-envs";
 import { z } from "zod";
 
 const serverSchema = extendConfigSchema(
@@ -160,7 +160,7 @@ import {
   RESPONSE_SUCCESS_CODE,
   RESPONSE_SUCCESS_MESSAGE,
   RESPONSE_SUCCESS_OK,
-} from "@shamt/envs";
+} from "@unimolecule/shopify-app-unmanual-envs";
 
 const response = {
   code: RESPONSE_SUCCESS_CODE,
@@ -173,7 +173,10 @@ const response = {
 使用 runtime 常量，避免散落字符串字面量：
 
 ```ts
-import { DEFAULT_RUNTIMES, type DEFAULT_RUNTIMES_VALUES } from "@shamt/envs";
+import {
+  DEFAULT_RUNTIMES,
+  type DEFAULT_RUNTIMES_VALUES,
+} from "@unimolecule/shopify-app-unmanual-envs";
 
 function isCloudflare(runtime: DEFAULT_RUNTIMES_VALUES) {
   return runtime === DEFAULT_RUNTIMES.CLOUDFLARE;
@@ -183,7 +186,7 @@ function isCloudflare(runtime: DEFAULT_RUNTIMES_VALUES) {
 使用文件上传默认配置：
 
 ```ts
-import { fileConfigSchema } from "@shamt/envs";
+import { fileConfigSchema } from "@unimolecule/shopify-app-unmanual-envs";
 
 const fileConfig = fileConfigSchema.parse({});
 

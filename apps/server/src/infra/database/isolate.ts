@@ -1,5 +1,5 @@
-import { DEFAULT_APP_DATABASE_PROVIDERS } from "@shamt/app-env";
-import * as sqliteDatabaseSchema from "@shamt/database/models/sqlite";
+import { DEFAULT_APP_DATABASE_PROVIDERS } from "@unimolecule/shopify-app-unmanual-app-env";
+import * as sqliteDatabaseSchema from "@unimolecule/shopify-app-unmanual-database/models/sqlite";
 import { internalServerError } from "@/shared/exceptions";
 import {
   getDatabaseCheckErrorMessage,

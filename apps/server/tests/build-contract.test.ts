@@ -50,9 +50,15 @@ describe("build output contracts", () => {
   });
 
   test.each([
-    ["@shamt/app-env", "packages/app-env/package.json"],
-    ["@shamt/database", "packages/database/package.json"],
-    ["@shamt/envs", "packages/envs/package.json"],
+    [
+      "@unimolecule/shopify-app-unmanual-app-env",
+      "packages/app-env/package.json",
+    ],
+    [
+      "@unimolecule/shopify-app-unmanual-database",
+      "packages/database/package.json",
+    ],
+    ["@unimolecule/shopify-app-unmanual-envs", "packages/envs/package.json"],
   ])("%s publish exports match tsdown output paths", async (_name, path) => {
     const packageJson = await readPackageJson(path);
     const publishConfig = packageJson.publishConfig;

@@ -45,7 +45,7 @@ describe("OpenAPI reference access control", () => {
     expect(document.status).toBe(200);
     expect(await document.json()).toMatchObject({
       openapi: "3.1.0",
-      info: { title: "@shamt/server" },
+      info: { title: "@unimolecule/shopify-app-unmanual-server" },
     });
     expect(reference.status).toBe(200);
   });

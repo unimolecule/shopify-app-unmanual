@@ -2,7 +2,7 @@
 
 ## Scope
 
-`@shamt/database` owns shared Drizzle table definitions, Drizzle-Zod schemas, and inferred database types.
+`@unimolecule/shopify-app-unmanual-database` owns shared Drizzle table definitions, Drizzle-Zod schemas, and inferred database types.
 
 ## Boundary Rules
 
@@ -35,5 +35,5 @@
 
 ## Verification
 
-- Run `pnpm -F @shamt/database build` after schema or export changes.
-- Run `pnpm -F @shamt/database lint` after broad TypeScript or Markdown edits.
+- Run `pnpm -F @unimolecule/shopify-app-unmanual-database build` after schema or export changes.
+- Run `pnpm -F @unimolecule/shopify-app-unmanual-database lint` after broad TypeScript or Markdown edits.

@@ -1,6 +1,6 @@
-# @shamt/database
+# @unimolecule/shopify-app-unmanual-database
 
-`@shamt/database` is the workspace package for shared Drizzle table
+`@unimolecule/shopify-app-unmanual-database` is the workspace package for shared Drizzle table
 definitions, Drizzle-Zod schemas, and inferred database types.
 
 Applications should import schema objects from this package and create their own
@@ -13,17 +13,17 @@ by Cloudflare D1.
 
 ## Exports
 
-| Entry                          | Purpose                                         |
-| ------------------------------ | ----------------------------------------------- |
-| `@shamt/database/constants`    | Shared database-domain constants                |
-| `@shamt/database/models`       | All Drizzle table models                        |
-| `@shamt/database/models/*`     | Dialect Drizzle table models                    |
-| `@shamt/database/schemas`      | All Drizzle-Zod validation schemas              |
-| `@shamt/database/schemas/*`    | Dialect insert/update/select schemas            |
-| `@shamt/database/types`        | Dialect-neutral app-facing database shape types |
-| `@shamt/database/package.json` | Package metadata                                |
+| Entry                                                     | Purpose                                         |
+| --------------------------------------------------------- | ----------------------------------------------- |
+| `@unimolecule/shopify-app-unmanual-database/constants`    | Shared database-domain constants                |
+| `@unimolecule/shopify-app-unmanual-database/models`       | All Drizzle table models                        |
+| `@unimolecule/shopify-app-unmanual-database/models/*`     | Dialect Drizzle table models                    |
+| `@unimolecule/shopify-app-unmanual-database/schemas`      | All Drizzle-Zod validation schemas              |
+| `@unimolecule/shopify-app-unmanual-database/schemas/*`    | Dialect insert/update/select schemas            |
+| `@unimolecule/shopify-app-unmanual-database/types`        | Dialect-neutral app-facing database shape types |
+| `@unimolecule/shopify-app-unmanual-database/package.json` | Package metadata                                |
 
-The package intentionally has no root `@shamt/database` export. Import from a
+The package intentionally has no root `@unimolecule/shopify-app-unmanual-database` export. Import from a
 specific boundary so consumers do not accidentally depend on every table,
 schema, and type.
 
@@ -32,14 +32,14 @@ schema, and type.
 The package builds with `tsdown --config ./build.config.ts` and keeps the
 constants, model, schema, and type entrypoints as files under `dist`.
 
-| Published export            | Output path example        |
-| --------------------------- | -------------------------- |
-| `@shamt/database/constants` | `dist/constants/index.mjs` |
-| `@shamt/database/models`    | `dist/models/index.mjs`    |
-| `@shamt/database/models/*`  | `dist/models/*/index.mjs`  |
-| `@shamt/database/schemas`   | `dist/schemas/index.mjs`   |
-| `@shamt/database/schemas/*` | `dist/schemas/*/index.mjs` |
-| `@shamt/database/types`     | `dist/types/index.mjs`     |
+| Published export                                       | Output path example        |
+| ------------------------------------------------------ | -------------------------- |
+| `@unimolecule/shopify-app-unmanual-database/constants` | `dist/constants/index.mjs` |
+| `@unimolecule/shopify-app-unmanual-database/models`    | `dist/models/index.mjs`    |
+| `@unimolecule/shopify-app-unmanual-database/models/*`  | `dist/models/*/index.mjs`  |
+| `@unimolecule/shopify-app-unmanual-database/schemas`   | `dist/schemas/index.mjs`   |
+| `@unimolecule/shopify-app-unmanual-database/schemas/*` | `dist/schemas/*/index.mjs` |
+| `@unimolecule/shopify-app-unmanual-database/types`     | `dist/types/index.mjs`     |
 
 Source workspace exports point at `src/*` for local TypeScript development.
 Published exports point at `dist/*`. The package exposes only boundary-level
@@ -135,7 +135,7 @@ same logical shape and keep dialect-specific date/status storage inside their
 own model files.
 
 The table includes a required `template` column that defaults to `basic`.
-Template codes are exported from `@shamt/database/constants` as
+Template codes are exported from `@unimolecule/shopify-app-unmanual-database/constants` as
 `PRODUCT_EXPORT_TEMPLATE_CODE_VALUES`.
 
 Key query indexes:
@@ -177,7 +177,7 @@ Reference indexes:
 
 ## Constants
 
-`@shamt/database/constants` owns product export enum-like values shared by
+`@unimolecule/shopify-app-unmanual-database/constants` owns product export enum-like values shared by
 database schemas and app code:
 
 ```ts
@@ -185,7 +185,7 @@ import {
   PRODUCT_EXPORT_PART_STATUS_VALUES,
   PRODUCT_EXPORT_STATUS_VALUES,
   PRODUCT_EXPORT_TEMPLATE_CODE_VALUES,
-} from "@shamt/database/constants";
+} from "@unimolecule/shopify-app-unmanual-database/constants";
 ```
 
 Use these exports instead of duplicating status or template arrays in app code.
@@ -199,12 +199,12 @@ import {
   insertPostgresFileSchema,
   selectPostgresFileSchema,
   updatePostgresFileSchema,
-} from "@shamt/database/schemas/postgres";
+} from "@unimolecule/shopify-app-unmanual-database/schemas/postgres";
 import {
   insertSqliteFileSchema,
   selectSqliteFileSchema,
   updateSqliteFileSchema,
-} from "@shamt/database/schemas/sqlite";
+} from "@unimolecule/shopify-app-unmanual-database/schemas/sqlite";
 ```
 
 Dialect schema entrypoints export dialect-prefixed inferred types such as
@@ -213,7 +213,7 @@ Dialect schema entrypoints export dialect-prefixed inferred types such as
 derived from the exported Zod schemas.
 
 The package also keeps pure Zod response entity schemas under
-`@shamt/database/entities/plain-zod-schema`. These schemas describe serialized
+`@unimolecule/shopify-app-unmanual-database/entities/plain-zod-schema`. These schemas describe serialized
 PostgreSQL select results for API responses and browser/runtime parsing. They
 import only Zod and shared constants, so they do not pull Drizzle table models
 or `drizzle-zod` into web or Cloudflare bundles.
@@ -225,7 +225,7 @@ import {
   ProductExportSchema,
   ReferenceSchema,
   ShopifySessionSchema,
-} from "@shamt/database/entities/plain-zod-schema";
+} from "@unimolecule/shopify-app-unmanual-database/entities/plain-zod-schema";
 ```
 
 Date and timestamp fields in these response schemas are ISO datetime strings,
@@ -234,7 +234,7 @@ Drizzle-Zod dialect schemas or by app-specific request body schemas.
 
 ## Types
 
-`@shamt/database/types` exports dialect-neutral aliases for app and web code
+`@unimolecule/shopify-app-unmanual-database/types` exports dialect-neutral aliases for app and web code
 that should not care which database provider backs the app:
 
 ```ts
@@ -243,7 +243,7 @@ import type {
   SelectFile,
   SelectProductExport,
   UpdateReference,
-} from "@shamt/database/types";
+} from "@unimolecule/shopify-app-unmanual-database/types";
 ```
 
 These aliases are generated from the canonical PostgreSQL schema types. They
@@ -260,7 +260,7 @@ import {
   postgresProductExports,
   postgresReferences,
   postgresShopifySessions,
-} from "@shamt/database/models/postgres";
+} from "@unimolecule/shopify-app-unmanual-database/models/postgres";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
 
@@ -284,7 +284,7 @@ import {
   sqliteProductExports,
   sqliteReferences,
   sqliteShopifySessions,
-} from "@shamt/database/models/sqlite";
+} from "@unimolecule/shopify-app-unmanual-database/models/sqlite";
 import { drizzle } from "drizzle-orm/d1";
 
 const db = drizzle(env.DB, {
@@ -300,7 +300,7 @@ const db = drizzle(env.DB, {
 Use models in queries:
 
 ```ts
-import { postgresFiles } from "@shamt/database/models/postgres";
+import { postgresFiles } from "@unimolecule/shopify-app-unmanual-database/models/postgres";
 import { eq } from "drizzle-orm";
 
 function listFiles() {

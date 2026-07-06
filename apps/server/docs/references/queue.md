@@ -325,13 +325,13 @@ product-metadata:generate
 聚焦 queue 测试：
 
 ```bash
-pnpm -F @shamt/server exec vitest run tests/queue-consumer.test.ts
+pnpm -F @unimolecule/shopify-app-unmanual-server exec vitest run tests/queue-consumer.test.ts
 ```
 
 类型检查：
 
 ```bash
-pnpm -F @shamt/server exec tsc --noEmit
+pnpm -F @unimolecule/shopify-app-unmanual-server exec tsc --noEmit
 ```
 
 当前测试覆盖：

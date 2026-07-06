@@ -1,5 +1,5 @@
 import { z } from "@hono/zod-openapi";
-import { ReferenceSchema as DatabaseReferenceSchema } from "@shamt/database/entities/plain-zod-schema";
+import { ReferenceSchema as DatabaseReferenceSchema } from "@unimolecule/shopify-app-unmanual-database/entities/plain-zod-schema";
 import { PaginationQuerySchema, PaginationSchema } from "@/shared/models";
 
 export const ReferenceSchema = DatabaseReferenceSchema.extend({

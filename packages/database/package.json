@@ -1,5 +1,5 @@
 {
-  "name": "@shamt/database",
+  "name": "@unimolecule/shopify-app-unmanual-database",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -98,7 +98,7 @@
     "clean:deps": "rimraf node_modules"
   },
   "dependencies": {
-    "@shamt/app-env": "workspace:*",
+    "@unimolecule/shopify-app-unmanual-app-env": "workspace:*",
     "drizzle-orm": "catalog:drizzle",
     "drizzle-zod": "catalog:drizzle",
     "zod": "catalog:"

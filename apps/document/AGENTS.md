@@ -19,5 +19,5 @@
 
 ## Verification
 
-- Run `pnpm -F @shamt/document build` when changing VitePress config, theme, or docs app structure.
-- Run `pnpm -F @shamt/document lint` after broad Markdown, Vue, TypeScript, or JSON edits.
+- Run `pnpm -F @unimolecule/shopify-app-unmanual-document build` when changing VitePress config, theme, or docs app structure.
+- Run `pnpm -F @unimolecule/shopify-app-unmanual-document lint` after broad Markdown, Vue, TypeScript, or JSON edits.

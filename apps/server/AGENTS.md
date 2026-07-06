@@ -18,8 +18,8 @@
 
 ## Package Ownership Rules
 
-- Database operations and database-backed schemas, types, enums, insert/select models, and status values must come from `@shamt/database` when that package provides them.
-- Env schemas, env types, runtime/provider constants, defaults, and parsing contracts must come from `@shamt/app-env` when that package provides them.
+- Database operations and database-backed schemas, types, enums, insert/select models, and status values must come from `@unimolecule/shopify-app-unmanual-database` when that package provides them.
+- Env schemas, env types, runtime/provider constants, defaults, and parsing contracts must come from `@unimolecule/shopify-app-unmanual-app-env` when that package provides them.
 - Before adding server-local schema, enum, or type definitions, check whether the concept belongs to `packages/database`, `packages/app-env`, or another semantic `packages/*` owner.
 - Server-local definitions are acceptable for HTTP transport, OpenAPI presentation, serialized response types, runtime capability contracts, or module-specific behavior that is not owned by a package.
 
@@ -38,7 +38,7 @@
 
 ## OpenAPI Schema Rules
 
-- App modules under `src/app/modules/*` should build OpenAPI schemas from pure Zod definitions exported by `@shamt/database/entities/schemas` when describing database-backed entities.
+- App modules under `src/app/modules/*` should build OpenAPI schemas from pure Zod definitions exported by `@unimolecule/shopify-app-unmanual-database/entities/schemas` when describing database-backed entities.
 - Do not import Drizzle-generated schemas, dialect models, PostgreSQL schemas, or SQLite/D1 schemas directly into module OpenAPI schema files.
 - Keep OpenAPI metadata, examples, params, query schemas, and request body schemas in the app module that owns the route.
 
@@ -84,7 +84,7 @@
 
 ## Verification
 
-- For server code changes, prefer `pnpm -F @shamt/server test`.
-- Run `pnpm -F @shamt/server lint` after broad TypeScript or Markdown edits.
-- Run `pnpm -F @shamt/server build` when runtime entrypoints, bundling, or Cloudflare/Node build behavior changes.
-- Run `pnpm -F @shamt/server cf:type` when Worker bindings change.
+- For server code changes, prefer `pnpm -F @unimolecule/shopify-app-unmanual-server test`.
+- Run `pnpm -F @unimolecule/shopify-app-unmanual-server lint` after broad TypeScript or Markdown edits.
+- Run `pnpm -F @unimolecule/shopify-app-unmanual-server build` when runtime entrypoints, bundling, or Cloudflare/Node build behavior changes.
+- Run `pnpm -F @unimolecule/shopify-app-unmanual-server cf:type` when Worker bindings change.

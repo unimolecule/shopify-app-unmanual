@@ -29,30 +29,30 @@ pnpm dev:tunnel
 
 ### Apps
 
-| Workspace                                   | Type | Description                                                                                          |
-| ------------------------------------------- | ---- | ---------------------------------------------------------------------------------------------------- |
-| [`@shamt/server`](./apps/server#readme)     | app  | Hono server for Shopify auth, app shell rendering, Admin API routes, webhooks, and runtime adapters. |
-| [`@shamt/web`](./apps/web#readme)           | app  | Vite React frontend for the Shopify admin UI.                                                        |
-| [`@shamt/document`](./apps/document#readme) | app  | VitePress documentation workspace.                                                                   |
+| Workspace                                                              | Type | Description                                                                                          |
+| ---------------------------------------------------------------------- | ---- | ---------------------------------------------------------------------------------------------------- |
+| [`@unimolecule/shopify-app-unmanual-server`](./apps/server#readme)     | app  | Hono server for Shopify auth, app shell rendering, Admin API routes, webhooks, and runtime adapters. |
+| [`@unimolecule/shopify-app-unmanual-web`](./apps/web#readme)           | app  | Vite React frontend for the Shopify admin UI.                                                        |
+| [`@unimolecule/shopify-app-unmanual-document`](./apps/document#readme) | app  | VitePress documentation workspace.                                                                   |
 
 ### Shared Packages
 
-| Workspace                                       | Type    | Description                                                                   |
-| ----------------------------------------------- | ------- | ----------------------------------------------------------------------------- |
-| [`@shamt/envs`](./packages/envs#readme)         | package | Runtime-neutral environment constants and Zod schemas.                        |
-| [`@shamt/app-env`](./packages/app-env#readme)   | package | Shopify app environment schema composed from the base env package.            |
-| [`@shamt/database`](./packages/database#readme) | package | Drizzle schemas, models, constants, and inferred database types for app data. |
+| Workspace                                                                  | Type    | Description                                                                   |
+| -------------------------------------------------------------------------- | ------- | ----------------------------------------------------------------------------- |
+| [`@unimolecule/shopify-app-unmanual-envs`](./packages/envs#readme)         | package | Runtime-neutral environment constants and Zod schemas.                        |
+| [`@unimolecule/shopify-app-unmanual-app-env`](./packages/app-env#readme)   | package | Shopify app environment schema composed from the base env package.            |
+| [`@unimolecule/shopify-app-unmanual-database`](./packages/database#readme) | package | Drizzle schemas, models, constants, and inferred database types for app data. |
 
 ## Architecture
 
 Dependency direction stays one-way:
 
 ```text
-@shamt/envs
-  -> @shamt/app-env
+@unimolecule/shopify-app-unmanual-envs
+  -> @unimolecule/shopify-app-unmanual-app-env
   -> apps/server / apps/web
 
-@shamt/database
+@unimolecule/shopify-app-unmanual-database
   -> apps/server / apps/web
 
 external runtime-neutral libraries
@@ -96,10 +96,10 @@ database URLs, Redis URLs, or private keys.
 Focused commands are preferred during feature work:
 
 ```bash
-pnpm -F @shamt/server test
-pnpm -F @shamt/web test
-pnpm -F @shamt/web build
-pnpm -F @shamt/envs build
+pnpm -F @unimolecule/shopify-app-unmanual-server test
+pnpm -F @unimolecule/shopify-app-unmanual-web test
+pnpm -F @unimolecule/shopify-app-unmanual-web build
+pnpm -F @unimolecule/shopify-app-unmanual-envs build
 ```
 
 ## Testing And Type Checking
@@ -112,8 +112,8 @@ uses `noEmit`.
 Examples:
 
 ```bash
-pnpm -F @shamt/server exec tsc -p tests/tsconfig.json --noEmit
-pnpm -F @shamt/web exec tsc -p tests/tsconfig.json --noEmit
+pnpm -F @unimolecule/shopify-app-unmanual-server exec tsc -p tests/tsconfig.json --noEmit
+pnpm -F @unimolecule/shopify-app-unmanual-web exec tsc -p tests/tsconfig.json --noEmit
 ```
 
 ## Documentation

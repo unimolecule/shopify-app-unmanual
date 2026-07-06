@@ -234,15 +234,15 @@ Cloudflare 可达入口不应通过任何共享聚合文件间接 import Postgre
 
 ```text
 infra/database/process.ts
-  -> import PostgreSQL models from @shamt/database
+  -> import PostgreSQL models from @unimolecule/shopify-app-unmanual-database
   -> create process database schema
 
 infra/database/isolate.ts
-  -> import SQLite/D1 models from @shamt/database
+  -> import SQLite/D1 models from @unimolecule/shopify-app-unmanual-database
   -> create isolate database schema
 ```
 
-不建议为了“自动聚合”在 app 内再创建 `postgres-schema.ts`、`sqlite-schema.ts`，也不建议创建一个同时可达 PostgreSQL 与 SQLite 的共享 schema barrel。后续 schema 增长时，优先在 `@shamt/database` 保持模型归属清晰，再由各 runtime database capabilities creator 直接选择对应 runtime 的模型集合。
+不建议为了“自动聚合”在 app 内再创建 `postgres-schema.ts`、`sqlite-schema.ts`，也不建议创建一个同时可达 PostgreSQL 与 SQLite 的共享 schema barrel。后续 schema 增长时，优先在 `@unimolecule/shopify-app-unmanual-database` 保持模型归属清晰，再由各 runtime database capabilities creator 直接选择对应 runtime 的模型集合。
 
 如果未来确实需要自动发现 schema，生成结果也必须是 runtime-specific 的产物：Cloudflare 生成文件只能引用 SQLite/D1 schema，Node 生成文件只能引用 PostgreSQL schema。
 
@@ -300,7 +300,7 @@ pnpm --dir apps/server run lint
 Cloudflare 产物还应检查不包含 Node/PostgreSQL 依赖：
 
 ```bash
-rg "PgTextBuilder|drizzle-orm/pg-core|@shamt/database/models/postgres|postgresShopifySessions|shopify-app-session-storage-drizzle.*postgres|node:" apps/server/dist
+rg "PgTextBuilder|drizzle-orm/pg-core|@unimolecule/shopify-app-unmanual-database/models/postgres|postgresShopifySessions|shopify-app-session-storage-drizzle.*postgres|node:" apps/server/dist
 ```
 
 如果 production Wrangler 使用编译后产物作为 `main`，本地调试仍可以保留源码 `main`。`RuntimeCapabilities` 的目标不是依赖某个 bundler 技巧，而是让源码 import graph 本身就表达 runtime 边界。

@@ -1,4 +1,4 @@
-import { postgresShopifySessions } from "@shamt/database/models/postgres";
+import { postgresShopifySessions } from "@unimolecule/shopify-app-unmanual-database/models/postgres";
 import type { ShopifySessionStorage } from "./types";
 import type { PostgresDatabase } from "@/infra/database";
 

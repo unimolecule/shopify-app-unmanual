@@ -4,4 +4,4 @@ export * from "./env";
 export * from "./queue";
 export * from "./scheduler";
 export * from "./shopify";
-export * from "@shamt/envs/constants";
+export * from "@unimolecule/shopify-app-unmanual-envs/constants";

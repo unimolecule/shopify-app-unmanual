@@ -1,4 +1,4 @@
-import { postgresReferences } from "@shamt/database/models/postgres";
+import { postgresReferences } from "@unimolecule/shopify-app-unmanual-database/models/postgres";
 import { and, asc, eq, gt, isNull, or, sql } from "drizzle-orm";
 import {
   getPageOffset,

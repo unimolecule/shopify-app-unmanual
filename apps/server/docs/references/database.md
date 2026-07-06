@@ -104,7 +104,7 @@ packages/database/src/models/postgres/product-exports.ts
 packages/database/src/models/sqlite/product-exports.ts
 ```
 
-`product_exports` 记录包含 `template` 字段，默认值为 `basic`。template code 的允许值由 `@shamt/database/constants` 暴露的 `PRODUCT_EXPORT_TEMPLATE_CODE_VALUES` 统一维护，业务层不要在 app 内另写一份枚举。
+`product_exports` 记录包含 `template` 字段，默认值为 `basic`。template code 的允许值由 `@unimolecule/shopify-app-unmanual-database/constants` 暴露的 `PRODUCT_EXPORT_TEMPLATE_CODE_VALUES` 统一维护，业务层不要在 app 内另写一份枚举。
 
 reference repository 使用：
 
@@ -170,7 +170,7 @@ pnpm --dir apps/server run db:seed:dev:d1
 
 ### Before `pnpm dev:tunnel`
 
-开发环境使用 `.env.development`。首次启动、切换 provider，或 `@shamt/database` schema 变更后，先同步对应 provider 的 schema：
+开发环境使用 `.env.development`。首次启动、切换 provider，或 `@unimolecule/shopify-app-unmanual-database` schema 变更后，先同步对应 provider 的 schema：
 
 | Runtime      | Provider   | 启动前推荐命令                                                               |
 | ------------ | ---------- | ---------------------------------------------------------------------------- |

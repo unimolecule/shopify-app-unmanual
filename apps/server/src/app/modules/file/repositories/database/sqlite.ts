@@ -1,4 +1,4 @@
-import { sqliteFiles } from "@shamt/database/models/sqlite";
+import { sqliteFiles } from "@unimolecule/shopify-app-unmanual-database/models/sqlite";
 import { and, desc, eq, isNull, lt, ne, or, sql } from "drizzle-orm";
 import {
   getListCursor,

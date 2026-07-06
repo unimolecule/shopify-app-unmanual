@@ -1,4 +1,4 @@
-import { sqliteReferences } from "@shamt/database/models/sqlite";
+import { sqliteReferences } from "@unimolecule/shopify-app-unmanual-database/models/sqlite";
 import { and, asc, eq, gt, isNull, or, sql } from "drizzle-orm";
 import {
   getPageOffset,
