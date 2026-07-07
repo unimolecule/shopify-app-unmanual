@@ -1,4 +1,4 @@
-import { DEFAULT_ENVS } from "@shamt/app-env";
+import { DEFAULT_ENVS } from "@unimolecule/shopify-app-unmanual-app-env";
 import { env } from "@/app/runtime/process/node/env";
 import { throwAppServerError as throwError } from "../../internal";
 

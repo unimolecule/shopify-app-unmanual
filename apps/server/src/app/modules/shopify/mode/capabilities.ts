@@ -1,8 +1,8 @@
 import { getEnvProvider } from "@/infra/provider";
 import { internalServerError } from "@/shared/exceptions";
 import type { AppEnv } from "@/typings";
-import type { DEFAULT_SHOPIFY_APP_MODES_VALUES } from "@shamt/app-env";
 import type { Session, Shopify } from "@shopify/shopify-api";
+import type { DEFAULT_SHOPIFY_APP_MODES_VALUES } from "@unimolecule/shopify-app-unmanual-app-env";
 import type { Context, MiddlewareHandler } from "hono";
 
 export interface ShopifyModeCapabilities {

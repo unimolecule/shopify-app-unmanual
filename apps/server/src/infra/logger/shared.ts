@@ -7,7 +7,7 @@ import {
 import {
   DEFAULT_LOGGER_LEVELS,
   type DEFAULT_LOGGER_LEVELS_VALUES,
-} from "@shamt/app-env";
+} from "@unimolecule/shopify-app-unmanual-app-env";
 import { name } from "../../../package.json";
 
 export type LoggerSetupOptions = {

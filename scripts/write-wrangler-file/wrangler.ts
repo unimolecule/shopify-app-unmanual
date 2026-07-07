@@ -5,7 +5,7 @@ import {
   DEFAULT_APP_SCHEDULER_PROVIDERS,
   DEFAULT_ENVS,
   DEFAULT_RUNTIMES,
-} from "@shamt/app-env";
+} from "@unimolecule/shopify-app-unmanual-app-env";
 import { throwError } from "../utils";
 import {
   DEVELOPMENT_ENTRY_PATH,

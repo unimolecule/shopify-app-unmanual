@@ -18,10 +18,15 @@ function sleep(ms: number) {
 
 async function createTestApp(timeoutMs: number) {
   vi.resetModules();
-  vi.doMock("@shamt/app-env", async (importOriginal) => ({
-    ...(await importOriginal<typeof import("@shamt/app-env")>()),
-    DEFAULT_UPLOAD_TIMEOUT: uploadTimeoutMs,
-  }));
+  vi.doMock(
+    "@unimolecule/shopify-app-unmanual-app-env",
+    async (importOriginal) => ({
+      ...(await importOriginal<
+        typeof import("@unimolecule/shopify-app-unmanual-app-env")
+      >()),
+      DEFAULT_UPLOAD_TIMEOUT: uploadTimeoutMs,
+    }),
+  );
   vi.doMock("@/infra/provider", () => ({
     getEnvProvider: vi.fn(() => ({
       ...runtimeConfig,
@@ -74,7 +79,7 @@ async function createTestApp(timeoutMs: number) {
 describe("registerMiddleware timeout", () => {
   afterEach(() => {
     vi.doUnmock("@/infra/provider");
-    vi.doUnmock("@shamt/app-env");
+    vi.doUnmock("@unimolecule/shopify-app-unmanual-app-env");
     vi.resetModules();
     vi.clearAllMocks();
   });

@@ -18,14 +18,30 @@ import {
 import type { AppOpenAPI } from "@/app/bootstrap/register-openapi";
 
 export function registerFileController(app: AppOpenAPI) {
-  app.openapi(createFileRoute, async (c) => {
-    const runtimeEnv = getEnvProvider(c.get("runtimeEnv") ?? c.env);
-    const shopDomain = c.get("shopDomain");
+  return app
+    .openapi(createFileRoute, async (c) => {
+      const runtimeEnv = getEnvProvider(c.get("runtimeEnv") ?? c.env);
+      const shopDomain = c.get("shopDomain");
 
-    if (isMultipartRequest(c.req.header("Content-Type"))) {
+      if (isMultipartRequest(c.req.header("Content-Type"))) {
+        return c.json(
+          createResponse({
+            data: await createFiles(c, {
+              runtimeEnv,
+              shopDomain,
+            }),
+            requestId: c.get("requestId"),
+          }),
+          201,
+        );
+      }
+
       return c.json(
         createResponse({
-          data: await createFiles(c, {
+          data: await createFile(c, {
+            body: c.req.raw.body,
+            contentType: c.req.header("Content-Type"),
+            originalName: c.req.header("X-File-Name"),
             runtimeEnv,
             shopDomain,
           }),
@@ -33,80 +49,61 @@ export function registerFileController(app: AppOpenAPI) {
         }),
         201,
       );
-    }
-
-    return c.json(
-      createResponse({
-        data: await createFile(c, {
-          body: c.req.raw.body,
-          contentType: c.req.header("Content-Type"),
-          originalName: c.req.header("X-File-Name"),
-          runtimeEnv,
-          shopDomain,
-        }),
-        requestId: c.get("requestId"),
-      }),
-      201,
-    );
-  });
-
-  app.openapi(listFilesRoute, async (c) => {
-    const { files, pagination } = await listFiles(c, {
-      cursor: c.req.valid("query").cursor,
-      limit: c.req.valid("query").limit,
-      page: c.req.valid("query").page,
-      shopDomain: c.get("shopDomain"),
-    });
-
-    return c.json(
-      createResponse({
-        data: {
-          pagination,
-          result: files,
-        },
-        requestId: c.get("requestId"),
-      }),
-      200,
-    );
-  });
-
-  app.openapi(getFileRoute, async (c) =>
-    c.json(
-      createResponse({
-        data: await getFile(c, c.get("shopDomain"), c.req.param("id")),
-        requestId: c.get("requestId"),
-      }),
-      200,
-    ),
-  );
-
-  app.openapi(downloadFileRoute, async (c) => {
-    const download = await downloadFile(
-      c,
-      c.get("shopDomain"),
-      c.req.param("id"),
-    );
-
-    if (download.type === "redirect") {
-      return new Response(null, {
-        status: 302,
-        headers: {
-          ...download.headers,
-          Location: download.url,
-        },
+    })
+    .openapi(listFilesRoute, async (c) => {
+      const { files, pagination } = await listFiles(c, {
+        cursor: c.req.valid("query").cursor,
+        limit: c.req.valid("query").limit,
+        page: c.req.valid("query").page,
+        shopDomain: c.get("shopDomain"),
       });
-    }
 
-    return new Response(download.body, {
-      status: 200,
-      headers: download.headers,
+      return c.json(
+        createResponse({
+          data: {
+            pagination,
+            result: files,
+          },
+          requestId: c.get("requestId"),
+        }),
+        200,
+      );
+    })
+    .openapi(getFileRoute, async (c) =>
+      c.json(
+        createResponse({
+          data: await getFile(c, c.get("shopDomain"), c.req.param("id")),
+          requestId: c.get("requestId"),
+        }),
+        200,
+      ),
+    )
+    .openapi(downloadFileRoute, async (c) => {
+      const download = await downloadFile(
+        c,
+        c.get("shopDomain"),
+        c.req.param("id"),
+      );
+
+      if (download.type === "redirect") {
+        return new Response(null, {
+          status: 302,
+          headers: {
+            ...download.headers,
+            Location: download.url,
+          },
+        });
+      }
+
+      return new Response(download.body, {
+        status: 200,
+        headers: download.headers,
+      });
+    })
+    .openapi(deleteFileRoute, async (c) => {
+      await deleteFile(c, c.get("shopDomain"), c.req.param("id"));
+      return c.body(null, 204);
     });
-  });
-
-  app.openapi(deleteFileRoute, async (c) => {
-    await deleteFile(c, c.get("shopDomain"), c.req.param("id"));
-    return c.body(null, 204);
-  });
 }
 
 function isMultipartRequest(contentType: string | undefined): boolean {

@@ -1,4 +1,4 @@
-import { DEFAULT_ENVS } from "@shamt/app-env";
+import { DEFAULT_ENVS } from "@unimolecule/shopify-app-unmanual-app-env";
 import { bootstrapApp } from "@/app/bootstrap";
 import { registerJobs } from "@/app/bootstrap/register-jobs";
 import { getEnvProvider, getLoggerProvider } from "@/infra/provider";

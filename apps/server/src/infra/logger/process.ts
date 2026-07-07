@@ -9,7 +9,7 @@ import {
   DEFAULT_APP_LOGGER_DIR,
   DEFAULT_APP_LOGGER_EXPIRE,
   DEFAULT_ENVS,
-} from "@shamt/app-env";
+} from "@unimolecule/shopify-app-unmanual-app-env";
 import { name } from "../../../package.json";
 import { getLoggerEnvConfig } from "./config";
 import {

@@ -1,4 +1,4 @@
-import { DEFAULT_APP_BUCKET_PROVIDERS } from "@shamt/app-env";
+import { DEFAULT_APP_BUCKET_PROVIDERS } from "@unimolecule/shopify-app-unmanual-app-env";
 import { DEFAULT_SIGNED_DOWNLOAD_URL_EXPIRE } from "@/constants";
 import { getAttachmentDisposition } from "../utils";
 import type {

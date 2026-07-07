@@ -1,4 +1,4 @@
-import { DEFAULT_RUNTIMES } from "@shamt/app-env";
+import { DEFAULT_RUNTIMES } from "@unimolecule/shopify-app-unmanual-app-env";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { createMockContext, runtimeConfig } from "./shopify/test-utils";
 

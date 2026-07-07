@@ -1,4 +1,4 @@
-import { DEFAULT_APP_BUCKET_PROVIDERS } from "@shamt/app-env/constants";
+import { DEFAULT_APP_BUCKET_PROVIDERS } from "@unimolecule/shopify-app-unmanual-app-env/constants";
 import {
   bigint,
   index,

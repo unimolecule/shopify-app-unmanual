@@ -28,7 +28,7 @@ pnpm deploy:prepare:wrangler
 
 ## 输入
 
-生成逻辑读取 `@shamt/app-env` 的 `configSchema`，核心输入是：
+生成逻辑读取 `@unimolecule/shopify-app-unmanual-app-env` 的 `configSchema`，核心输入是：
 
 | Env                        | 作用                                    |
 | -------------------------- | --------------------------------------- |

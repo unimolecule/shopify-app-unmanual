@@ -1,4 +1,7 @@
-import { DEFAULT_SHOPIFY_APP_MODES, type ConfigSchema } from "@shamt/app-env";
+import {
+  DEFAULT_SHOPIFY_APP_MODES,
+  type ConfigSchema,
+} from "@unimolecule/shopify-app-unmanual-app-env";
 import { escape as escapeHtml } from "@unimolecule/utils";
 import { throwAppWebError as throwError } from "../../../internal";
 import type { Plugin } from "vite";

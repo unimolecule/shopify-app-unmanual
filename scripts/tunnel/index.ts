@@ -1,4 +1,4 @@
-import { configSchema } from "@shamt/app-env";
+import { configSchema } from "@unimolecule/shopify-app-unmanual-app-env";
 import { unifiedSpawn } from "@unimolecule/utils/node";
 import type { ChildProcess } from "node:child_process";
 

@@ -1,7 +1,7 @@
 import {
   DEFAULT_APP_BUCKET_PROVIDERS,
   type DEFAULT_APP_BUCKET_PROVIDERS_VALUES,
-} from "@shamt/app-env";
+} from "@unimolecule/shopify-app-unmanual-app-env";
 import { runtimeCapabilities } from "@/app/runtime/runtime-capabilities";
 import { badGatewayError, notFoundError } from "@/shared/exceptions";
 import { toPaginationInput } from "@/shared/models";

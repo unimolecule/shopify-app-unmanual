@@ -21,4 +21,13 @@ export default defineConfig([
     outDir: "dist/isolate/cloudflare",
     watch: process.env.APP_ENV === "development",
   },
+  {
+    entry: ["./src/app-api-type.ts"],
+    format: ["esm"],
+    platform: "neutral",
+    dts: true,
+    tsconfig: "./tsconfig.json",
+    outDir: "dist/typings",
+    watch: process.env.APP_ENV === "development",
+  },
 ]);

@@ -5,7 +5,7 @@ import { getProducts } from "./service";
 import type { AppOpenAPI } from "@/app/bootstrap/register-openapi";
 
 export function registerProductController(app: AppOpenAPI) {
-  app.openapi(getProductsRoute, async (c) => {
+  return app.openapi(getProductsRoute, async (c) => {
     try {
       return c.json(
         createResponse({

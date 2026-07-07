@@ -1,4 +1,7 @@
-import { DEFAULT_APP_BUCKET_PROVIDERS, DEFAULT_RUNTIMES } from "@shamt/app-env";
+import {
+  DEFAULT_APP_BUCKET_PROVIDERS,
+  DEFAULT_RUNTIMES,
+} from "@unimolecule/shopify-app-unmanual-app-env";
 import { sha256Hex } from "@unimolecule/utils";
 import { internalServerError, payloadTooLargeError } from "@/shared/exceptions";
 import { getCloudflareTokenId } from "@/utils/cloudflare";

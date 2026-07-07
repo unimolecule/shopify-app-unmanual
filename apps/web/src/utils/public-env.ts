@@ -6,7 +6,7 @@ import {
   DEFAULT_SHOPIFY_APP_FRONTEND_TARGETS,
   DEFAULT_SHOPIFY_APP_MODES,
   type DEFAULT_SHOPIFY_APP_MODES_VALUES,
-} from "@shamt/app-env/constants";
+} from "@unimolecule/shopify-app-unmanual-app-env/constants";
 
 export {
   DEFAULT_APP_API_PREFIX,

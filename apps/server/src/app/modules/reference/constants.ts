@@ -1,10 +1,9 @@
 import { capitalize } from "@unimolecule/utils";
-import { getEnvProvider } from "@/infra/provider";
+import { ApiPrefixWithVersion } from "@/constants";
 
-const env = getEnvProvider();
-
-export const apiPath = `/${env.APP_API_PREFIX}/references`;
-export const tag = `${capitalize(env.APP_API_PREFIX)} - References`;
+const [apiPrefix, apiVersion] = ApiPrefixWithVersion.v1.split("/");
+export const apiPath = `/${ApiPrefixWithVersion.v1}/references` as const;
+export const tag = `[${capitalize(apiVersion)}] ${capitalize(apiPrefix)} - References`;
 export const tags = [tag];
 
 export const REFERENCE_NAMESPACES = {

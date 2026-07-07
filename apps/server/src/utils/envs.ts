@@ -3,7 +3,7 @@ import {
   DEFAULT_RUNTIMES,
   type DEFAULT_ENVS_VALUES,
   type DEFAULT_RUNTIMES_VALUES,
-} from "@shamt/app-env";
+} from "@unimolecule/shopify-app-unmanual-app-env";
 
 const ISOLATE_RUNTIMES = [
   DEFAULT_RUNTIMES.CLOUDFLARE,

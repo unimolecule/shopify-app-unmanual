@@ -1,4 +1,4 @@
-import { DEFAULT_APP_DATABASE_PROVIDERS } from "@shamt/app-env";
+import { DEFAULT_APP_DATABASE_PROVIDERS } from "@unimolecule/shopify-app-unmanual-app-env";
 import { expect, vi } from "vitest";
 import {
   runtimeCapabilityDatabase,

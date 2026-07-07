@@ -1,4 +1,7 @@
-import { configSchema, DEFAULT_RUNTIMES } from "@shamt/app-env";
+import {
+  configSchema,
+  DEFAULT_RUNTIMES,
+} from "@unimolecule/shopify-app-unmanual-app-env";
 import { executeCommand } from "@unimolecule/utils/node";
 import { throwRepositoryError as throwError } from "../utils";
 

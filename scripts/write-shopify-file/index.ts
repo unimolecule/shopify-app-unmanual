@@ -5,7 +5,7 @@ import {
   DEFAULT_RUNTIMES,
   DEFAULT_SHOPIFY_APP_FRONTEND_TARGETS,
   DEFAULT_SHOPIFY_APP_MODES,
-} from "@shamt/app-env";
+} from "@unimolecule/shopify-app-unmanual-app-env";
 import { isObject, throwRepositoryError as throwError } from "../utils";
 import {
   getShopifyAppPath,

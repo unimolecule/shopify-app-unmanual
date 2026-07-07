@@ -1,4 +1,4 @@
-import { DEFAULT_APP_NAME } from "@shamt/app-env";
+import { DEFAULT_APP_NAME } from "@unimolecule/shopify-app-unmanual-app-env";
 
 const appName =
   typeof process !== "undefined" && process.env.APP_NAME

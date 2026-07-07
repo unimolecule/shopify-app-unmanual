@@ -1,7 +1,7 @@
 import { throwAppWebError as throwError } from "../../internal";
 import { createViteAllowedHosts } from "./allowed-hosts";
 import { createViteProxy } from "./proxy";
-import type { ConfigSchema } from "@shamt/app-env";
+import type { ConfigSchema } from "@unimolecule/shopify-app-unmanual-app-env";
 import type { ServerOptions } from "vite";
 
 interface CreateViteServerOptions {

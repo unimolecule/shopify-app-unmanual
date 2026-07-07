@@ -1,6 +1,6 @@
 import path from "node:path";
 import { findMonorepoRoot, throwError } from "../utils";
-import type { ConfigSchema } from "@shamt/app-env";
+import type { ConfigSchema } from "@unimolecule/shopify-app-unmanual-app-env";
 
 export type WranglerFileConfig = ConfigSchema;
 

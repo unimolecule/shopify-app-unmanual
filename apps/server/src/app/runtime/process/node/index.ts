@@ -1,5 +1,5 @@
 import { serve } from "@hono/node-server";
-import { DEFAULT_ENVS } from "@shamt/app-env";
+import { DEFAULT_ENVS } from "@unimolecule/shopify-app-unmanual-app-env";
 import { bootstrapApp } from "@/app/bootstrap";
 import { registerJobs } from "@/app/bootstrap/register-jobs";
 import { registerProcessExceptions } from "@/app/runtime/process/node/register-process-exceptions";

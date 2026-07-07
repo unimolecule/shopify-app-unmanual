@@ -3,7 +3,7 @@ import {
   SENSITIVE_ENV_KEY_IDENTIFIERS,
 } from "../../../constants";
 import { throwAppWebError as throwError } from "../../../internal";
-import type { ConfigSchema } from "@shamt/app-env";
+import type { ConfigSchema } from "@unimolecule/shopify-app-unmanual-app-env";
 import type { Plugin } from "vite";
 
 interface PublicEnvPluginOptions {

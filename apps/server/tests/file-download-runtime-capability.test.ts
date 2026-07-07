@@ -1,4 +1,4 @@
-import { DEFAULT_APP_DATABASE_PROVIDERS } from "@shamt/app-env";
+import { DEFAULT_APP_DATABASE_PROVIDERS } from "@unimolecule/shopify-app-unmanual-app-env";
 import { describe, expect, it, vi } from "vitest";
 import { runtimeCapabilityCloudflare } from "@/app/runtime/isolate/cloudflare/runtime-capabilities";
 import { getRuntimeConfig } from "@/infra/env";

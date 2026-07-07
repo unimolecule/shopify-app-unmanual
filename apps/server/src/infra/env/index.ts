@@ -1,4 +1,4 @@
-import { envConfigSchema } from "@shamt/app-env";
+import { envConfigSchema } from "@unimolecule/shopify-app-unmanual-app-env";
 import { formatZodError, isIsolateRuntime, throwError } from "@/utils";
 import { parseIsolateConfig, type IsolateConfig } from "./isolate";
 import { parseProcessConfig, type ProcessConfig } from "./process";

@@ -306,8 +306,8 @@ export const getHealthRoute = createRoute({
   },
 });
 
-function createReservedHealthRoute(
-  routePath: string,
+function createReservedHealthRoute<const TPath extends string>(
+  routePath: TPath,
   summary: string,
   description: string,
 ) {

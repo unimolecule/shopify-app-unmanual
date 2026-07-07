@@ -1,5 +1,5 @@
 import { getRuntimeConfig } from "@/infra/env";
-import type { ConfigSchema } from "@shamt/app-env";
+import type { ConfigSchema } from "@unimolecule/shopify-app-unmanual-app-env";
 
 /**
  * Process-only validated env singleton.

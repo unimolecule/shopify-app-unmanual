@@ -1,5 +1,5 @@
-import { DEFAULT_ENVS } from "@shamt/app-env";
 import { HTTP_STATUS_CODES } from "@unimolecule/canon/http";
+import { DEFAULT_ENVS } from "@unimolecule/shopify-app-unmanual-app-env";
 import { getEnvProvider } from "@/infra/provider";
 import {
   createError,

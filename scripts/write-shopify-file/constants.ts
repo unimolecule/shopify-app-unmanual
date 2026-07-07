@@ -1,5 +1,8 @@
 import path from "node:path";
-import { DEFAULT_ENVS, type ConfigSchema } from "@shamt/app-env";
+import {
+  DEFAULT_ENVS,
+  type ConfigSchema,
+} from "@unimolecule/shopify-app-unmanual-app-env";
 import { findMonorepoRoot, throwError } from "../utils";
 
 export type ShopifyFileConfig = ConfigSchema;

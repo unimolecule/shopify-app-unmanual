@@ -1,4 +1,4 @@
-import { DEFAULT_APP_DATABASE_PROVIDERS } from "@shamt/app-env";
+import { DEFAULT_APP_DATABASE_PROVIDERS } from "@unimolecule/shopify-app-unmanual-app-env";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { BucketFileDownloadResolver } from "@/app/modules/file/download";
 import { createPostgresFilesRepository } from "@/app/modules/file/repositories/database/postgres";

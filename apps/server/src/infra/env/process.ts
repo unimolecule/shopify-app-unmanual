@@ -2,7 +2,7 @@ import {
   configSchema,
   DEFAULT_RUNTIMES,
   type ConfigSchema,
-} from "@shamt/app-env";
+} from "@unimolecule/shopify-app-unmanual-app-env";
 import { z } from "zod";
 import { parseWithSchema } from "./shared";
 

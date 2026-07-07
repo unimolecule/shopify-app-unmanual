@@ -1,4 +1,4 @@
-import { DEFAULT_APP_SCHEDULER_PROVIDERS } from "@shamt/app-env";
+import { DEFAULT_APP_SCHEDULER_PROVIDERS } from "@unimolecule/shopify-app-unmanual-app-env";
 import { internalServerError } from "@/shared/exceptions";
 import {
   findSchedulerTasksByCron,

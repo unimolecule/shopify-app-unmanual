@@ -11,11 +11,20 @@ import type { AppOpenAPI } from "./register-openapi";
  * Route aggregation only; concrete route behavior lives in modules.
  */
 export function registerRoutes(app: AppOpenAPI) {
+  return registerFileController(
+    registerHealthController(
+      registerProductController(
+        registerProductExportController(
+          registerReferenceController(registerShopController(app)),
+        ),
+      ),
+    ),
+  );
+}
+
+/**
+ * Runtime route aggregation only, not export for hono RPC
+ */
+export function registerRuntimeRoutes(app: AppOpenAPI) {
   registerShopifyRoutes(app);
-  registerFileController(app);
-  registerHealthController(app);
-  registerProductController(app);
-  registerProductExportController(app);
-  registerReferenceController(app);
-  registerShopController(app);
 }

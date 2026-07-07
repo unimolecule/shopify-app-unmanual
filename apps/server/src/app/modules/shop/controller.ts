@@ -5,7 +5,7 @@ import { getShopInfo } from "./service";
 import type { AppOpenAPI } from "@/app/bootstrap/register-openapi";
 
 export function registerShopController(app: AppOpenAPI) {
-  app.openapi(getShopRoute, async (c) => {
+  return app.openapi(getShopRoute, async (c) => {
     try {
       return c.json(
         createResponse({

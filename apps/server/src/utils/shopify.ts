@@ -1,7 +1,7 @@
 import {
   DEFAULT_SHOPIFY_APP_MODES,
   type DEFAULT_SHOPIFY_APP_MODES_VALUES,
-} from "@shamt/app-env";
+} from "@unimolecule/shopify-app-unmanual-app-env";
 
 const embeddedAppModeFlags = {
   [DEFAULT_SHOPIFY_APP_MODES.EMBEDDED]: true,

@@ -3,11 +3,11 @@
 /// <reference types="@shopify/app-bridge-types" />
 
 /* eslint-disable vars-on-top */
-import type { ConfigSchema } from "@shamt/app-env";
 import type {
   SAppNavAttributes,
   SAppNavLinkAttributes,
 } from "@shopify/app-bridge-types";
+import type { ConfigSchema } from "@unimolecule/shopify-app-unmanual-app-env";
 
 type PublicEnv = Omit<
   ConfigSchema,

@@ -1,4 +1,4 @@
-import { DEFAULT_APP_BUCKET_PROVIDERS } from "@shamt/app-env";
+import { DEFAULT_APP_BUCKET_PROVIDERS } from "@unimolecule/shopify-app-unmanual-app-env";
 import { internalServerError, payloadTooLargeError } from "@/shared/exceptions";
 import { S3CompatibleBucket } from "./process.s3-compatible";
 import {

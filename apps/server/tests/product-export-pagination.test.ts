@@ -1,4 +1,4 @@
-import { DEFAULT_APP_DATABASE_PROVIDERS } from "@shamt/app-env";
+import { DEFAULT_APP_DATABASE_PROVIDERS } from "@unimolecule/shopify-app-unmanual-app-env";
 import { describe, expect, it } from "vitest";
 import { createPostgresProductExportsRepository } from "@/app/modules/product-export/repositories/database/postgres";
 import { createSeekCursor } from "@/shared/models";

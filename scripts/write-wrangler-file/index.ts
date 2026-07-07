@@ -1,5 +1,5 @@
 import { writeFile } from "node:fs/promises";
-import { configSchema } from "@shamt/app-env";
+import { configSchema } from "@unimolecule/shopify-app-unmanual-app-env";
 import { wranglerPath } from "./constants";
 import { renderWranglerConfig } from "./wrangler";
 

@@ -1,4 +1,4 @@
-import { DEFAULT_SHOPIFY_APP_FRONTEND_TARGETS } from "@shamt/app-env";
+import { DEFAULT_SHOPIFY_APP_FRONTEND_TARGETS } from "@unimolecule/shopify-app-unmanual-app-env";
 import { getEnvProvider } from "@/infra/provider";
 import { getShopifyModeCapabilities } from "../mode";
 import { getShopifyAppShellUrl } from "./urls";

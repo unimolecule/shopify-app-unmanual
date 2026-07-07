@@ -1,4 +1,7 @@
-import { configSchema, type ConfigSchema } from "@shamt/app-env";
+import {
+  configSchema,
+  type ConfigSchema,
+} from "@unimolecule/shopify-app-unmanual-app-env";
 import { rootPackagePath } from "./constants";
 import { readJsonFile, sanitizePackageName, throwError } from "./utils";
 

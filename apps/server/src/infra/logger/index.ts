@@ -1,5 +1,5 @@
 import { getLogger } from "@logtape/logtape";
-import { DEFAULT_LOG_LEVEL } from "@shamt/app-env";
+import { DEFAULT_LOG_LEVEL } from "@unimolecule/shopify-app-unmanual-app-env";
 import { name } from "../../../package.json";
 import { setupConsoleLogger } from "./shared";
 

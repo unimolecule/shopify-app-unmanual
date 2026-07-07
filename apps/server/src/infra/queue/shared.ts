@@ -2,7 +2,7 @@ import {
   DEFAULT_APP_DATABASE_PROVIDERS,
   DEFAULT_APP_QUEUE_PROVIDERS,
   DEFAULT_RUNTIMES,
-} from "@shamt/app-env";
+} from "@unimolecule/shopify-app-unmanual-app-env";
 import { internalServerError } from "@/shared/exceptions";
 import type { QueueJobContext } from "./registry";
 import type { RuntimeConfig } from "@/infra/env";

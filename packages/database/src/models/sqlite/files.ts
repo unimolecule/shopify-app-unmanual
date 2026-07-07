@@ -1,7 +1,7 @@
 import {
   DEFAULT_APP_BUCKET_PROVIDERS,
   type DEFAULT_APP_BUCKET_PROVIDERS_VALUES,
-} from "@shamt/app-env/constants";
+} from "@unimolecule/shopify-app-unmanual-app-env/constants";
 import { index, integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { FILE_STATUS_VALUES } from "../../constants";
 
